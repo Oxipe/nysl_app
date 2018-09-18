@@ -40,7 +40,7 @@
             "goal_saldo" : 0,
             "total_points" : 0,
             "players" : ["Sayaplayer", "TviQ", "XepheR", "aWesomeGuy"],
-            "logo" : "images\team_logos\florida_mayhem.png" 
+            "logo" : "images/team_logos/florida_mayhem.png" 
         },
         {
             "team_name" : "Houston Outlaws",
@@ -138,7 +138,7 @@
             "goal_saldo" : 0,
             "total_points" : 0,
             "players" : ["Choihyobin", "Moth", "super", "BABYBAY", "sinatraa", "sleepy", "Danteh", "Nevix", "Architect"],
-            "logo" : "images/team_logos/hsan_francisco_shock.png"
+            "logo" : "images/team_logos/san_francisco_shock.png"
         },
         {
             "team_name" : "Seoul Dynasty",
@@ -179,7 +179,7 @@
                     "field" : "1",
                     "game_time" : "9:30 a.m.",
                     "referee" : "John Johnsen",
-                    "date" : "September 1th"
+                    "date" : "September 01"
                 },
                 {
                     "home_party" : "SHO",
@@ -188,7 +188,7 @@
                     "field" : "2",
                     "game_time" : "1:00 p.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "September 1th"
+                    "date" : "September 01"
                 },
                 {
                     "home_party" : "DAL",
@@ -197,7 +197,7 @@
                     "field" : "1",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "September 8th"
+                    "date" : "September 08"
                 },
                 {
                     "home_party" : "LON",
@@ -206,7 +206,7 @@
                     "field" : "4",
                     "game_time" : "1:00 p.m.",
                     "referee" : "John Johnsen",
-                    "date" : "September 8th"
+                    "date" : "September 08"
                 },
                 {
                     "home_party" : "PHI",
@@ -215,7 +215,7 @@
                     "field" : "1",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "September 15th"
+                    "date" : "September 15"
                 },
                 {
                     "home_party" : "BOS",
@@ -224,7 +224,7 @@
                     "field" : "2",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "September 15th"
+                    "date" : "September 15"
                 },
                 {
                     "home_party" : "VAL",
@@ -233,7 +233,7 @@
                     "field" : "1",
                     "game_time" : "1:00 p.m.",
                     "referee" : "John Johnsen",
-                    "date" : "September 22th"
+                    "date" : "September 22"
                 },
                 {
                     "home_party" : "FLA",
@@ -242,7 +242,7 @@
                     "field" : "2",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "September 22th"
+                    "date" : "September 22"
                 },
                 {
                     "home_party" : "SFS",
@@ -251,7 +251,7 @@
                     "field" : "1",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "September 29th"
+                    "date" : "September 29"
                 }
             ],
             "October" : [
@@ -262,7 +262,7 @@
                     "field" : "2",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "October 6th"
+                    "date" : "October 06"
                 },
                 {
                     "home_party" : "FLA",
@@ -271,7 +271,7 @@
                     "field" : "1",
                     "game_time" : "1:00 p.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "October 6th"
+                    "date" : "October 06"
                 },
                 {
                     "home_party" : "HOU",
@@ -280,7 +280,7 @@
                     "field" : "4",
                     "game_time" : "9:30 a.m.",
                     "referee" : "John Johnsen",
-                    "date" : "October 13th"
+                    "date" : "October 13"
                 },
                 {
                     "home_party" : "DAL",
@@ -289,7 +289,7 @@
                     "field" : "1",
                     "game_time" : "1:00 p.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "October 13th"
+                    "date" : "October 13"
                 },
                 {
                     "home_party" : "NYE",
@@ -298,7 +298,7 @@
                     "field" : "2",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "October 20th"
+                    "date" : "October 20"
                 },
                 {
                     "home_party" : "SEO",
@@ -307,7 +307,7 @@
                     "field" : "1",
                     "game_time" : "1:00 p.m.",
                     "referee" : "John Johnsen",
-                    "date" : "October 20th"
+                    "date" : "October 20"
                 },
                 {
                     "home_party" : "SHO",
@@ -316,7 +316,7 @@
                     "field" : "3",
                     "game_time" : "9:30 a.m.",
                     "referee" : "Dick Dicksen",
-                    "date" : "October 27th"
+                    "date" : "October 27"
                 },        
                 {
                     "home_party" : "LON",
@@ -325,7 +325,7 @@
                     "field" : "1",
                     "game_time" : "1:00 p.m.",
                     "referee" : "Bob Bobsen",
-                    "date" : "October 27th"
+                    "date" : "October 27"
                 }
             ]
         },
@@ -336,23 +336,23 @@
         },
         {
             "title" : "Dynasty slips pass Outlaws",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+            "article" : "Praesent in nisl ac nulla condimentum eleifend. Morbi aliquam tincidunt pretium. Sed porta maximus maximus. Sed ac volutpat purus. Nulla malesuada lacinia consectetur. Pellentesque quis volutpat erat. Ut gravida faucibus cursus. In sed est porta, scelerisque lectus eget, ornare eros. Cras hendrerit urna lorem, vel tincidunt eros tempor non. Aenean suscipit neque nibh, ac dapibus leo pretium at."
         },
         {
-            "title" : "Late win for Boston Fuel",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+          "title": "Late win for Boston Fuel",
+          "article": "Integer molestie est dolor, eu ultricies enim ornare id. Donec mollis bibendum est, ut ornare libero bibendum in. In arcu ipsum, finibus sed varius at, vestibulum et mi. Vivamus eleifend tincidunt eros, vitae dictum dui convallis et. Fusce diam sapien, porta vel enim sed, posuere consectetur felis. Curabitur porta nibh quis molestie iaculis. Aliquam erat volutpat."
         },
         {
-            "title" : "Valiants takes down the Gladiators",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+          "title": "Valiants takes down the Gladiators",
+          "article": "In dignissim augue ac metus ullamcorper porttitor. Suspendisse at placerat enim, vel ornare urna. Sed pretium velit eget felis pellentesque, at egestas dolor varius. Ut ipsum odio, egestas non suscipit non, pretium quis purus. Praesent maximus tellus vitae sem efficitur, congue ultrices felis cursus. Pellentesque eu justo a justo molestie finibus ut a sapien. Mauris sit amet fermentum lorem. Sed augue leo, pulvinar nec lobortis nec, dictum a mauris. Sed luctus commodo nisl, a lobortis nibh."
         },
         {
-            "title" : "Dalles Fuel ignites the Mayhem",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+          "title": "Dalles Fuel ignites the Mayhem",
+          "article": "Phasellus vitae magna eget ligula fringilla interdum. Proin elementum justo a leo finibus, at rutrum lorem ornare. Proin magna magna, venenatis id dui a, imperdiet hendrerit ligula. Aliquam vel urna euismod, semper enim nec, consectetur mauris. Phasellus luctus congue scelerisque. Vivamus iaculis tellus in venenatis eleifend. Phasellus sit amet ipsum efficitur, tincidunt nibh id, dapibus purus."
         },
         {
             "title" : "Dynasty takes the win",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+            "article" : "Suspendisse elementum efficitur velit sit amet eleifend. Curabitur pellentesque velit vitae consectetur molestie. Praesent mattis sapien ac tellus viverra, scelerisque malesuada metus bibendum. Aliquam in tincidunt est. Nunc scelerisque malesuada pellentesque. Proin fermentum pretium turpis. Curabitur viverra odio ac arcu ullamcorper, tristique varius nibh molestie. Nam volutpat nec leo a varius."
         }
     ],
     "results" : [
@@ -363,13 +363,13 @@
             "result_home" : 1,
             "result_away" : 3
         },
-        {
-            "date" : "August 7th",
-            "home_party" : "VAL",
-            "away_party" : "SFS",
-            "result_home" : 3,
-            "result_away" : 2
-        },
+      {
+        "date": "August 7th",
+        "home_party": "VAL",
+        "away_party": "SFS",
+        "result_home": 3,
+        "result_away": 2
+      },
         {
             "date" : "August 7th",
             "home_party" : "SEO",

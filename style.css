@@ -119,7 +119,11 @@ h2 {
 
 .inner_container {
     flex-basis: 50%;
-}
+}.
+
+ .sub_title {
+     flex-basis: 100%;
+ }
 
 .next_game_date,
 .sub_title {

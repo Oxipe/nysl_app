@@ -3,7 +3,7 @@ getData();
 fetchWeather();
 
 function getData() {
-    fetch("https://api.myjson.com/bins/13e8ns")
+    fetch("https://api.myjson.com/bins/ja8p0")
         .then(response => response.json())
         .then(json => {
             data = json;
@@ -35,15 +35,23 @@ Vue.component("versus", {
 //Number of characters to pass: 220
 
 function fillApp(data) {
-    new Vue({
+   var app = new Vue({
         el: "#app",
         created: function () {
             this.data = data;
             this.setPageTitle();
+            this.setUpcommingMatch();
+
         },
         data: {
             data: [],
+            upcommingMatch: [],
             page_title: "",
+            match_one_home: "",
+            match_one_away: "",
+            match_two_home: "images/team_logos/san_francisco_shock.png",
+            match_two_away: "images/team_logos/los_angeles_valiant.png",
+            nextPlayDate: "",
             home_page: true,
             news_page: false,
             schedule_page: false,
@@ -127,6 +135,96 @@ function fillApp(data) {
                 else if (this.standings_page) this.page_title = "Standings";
                 else if (this.chat_page) this.page_title = "Chat";
                 else if (this.settings_page) this.page_title = "Settings";
+            },
+            wrapNews: function (article) {
+                var isDone = false
+                var arrayOfWords = article.split(" ");
+                var tempArray = [];
+
+                var count = 0;
+
+                while (!isDone) {
+                    for (var i = 0; i < arrayOfWords.length; i++) {
+
+                        if ((count + arrayOfWords[i].length) < 220) {
+                            count += arrayOfWords[i].length + 1;
+                            tempArray.push(arrayOfWords[i])
+                        } else {
+                            isDone = true;
+                            break;
+                        }
+                    }
+                }
+
+                return result = tempArray.join(" ") + "...";
+
+            },
+            setUpcommingMatch: function () {
+                var date = new Date();
+                var currentDate = getMonth(date.getMonth()) + " " + date.getDate();
+
+                var position = 0;
+
+                for (var i = 0; i < this.data.schedule.September.length; i++) {
+                    if (currentDate < this.data.schedule.September[i].date) {
+                        this.nextPlayDate = this.data.schedule.September[i].date;
+                        position = i - 1;
+
+                        
+                        for (var j = i; j < this.data.schedule.September.length; j++) {
+                            if (this.nextPlayDate === this.data.schedule.September[j].date) {
+                                var homeTeam = this.data.schedule.September[j].home_party;
+                                var awayTeam = this.data.schedule.September[j].away_party;
+                                var homeName;
+                                var awayName;
+                                var homeLogo;
+                                var awayLogo;
+
+
+                                console.log(homeTeam)
+                                console.log(awayTeam)
+
+                                for (var k = 0; k < this.data.team.length; k++) {
+                                    if (homeTeam === this.data.team[k].team_code) {
+                                        homeName = this.data.team[k].team_name;
+                                        homeLogo = this.data.team[k].logo;
+                                    }
+                                }
+
+                                for (var l = 0; l < this.data.team.length; l++) {
+                                    if (awayTeam === this.data.team[l].team_code) {
+                                        awayName = this.data.team[l].team_name;
+                                        awayLogo = this.data.team[l].logo;
+                                    }
+                                }
+
+                                var match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo);
+
+                                this.upcommingMatch.push(match);
+                            }
+                        }
+                        
+                        break;
+                    }
+                }
+                
+
+                console.log(this.upcommingMatch)
+                
+
+                console.log("current date: " + currentDate);
+                console.log(getMonth(date.getMonth()) === this.data.schedule.September)
+
+
+                console.log(currentDate > this.data.schedule.September[0].date);
+                console.log(currentDate + " " + this.data.schedule.September[0].date);
+            },
+            CreateMatch: function (homeName, awayName, homeLogo, awayLogo) {
+                console.log("creating match")
+                this.homeName = homeName;
+                this.awayName = awayName;
+                this.homeLogo = homeLogo;
+                this.awayLogo = awayLogo;
             }
         }
     });
@@ -152,7 +250,21 @@ function displayWeather(data) {
     });
 }
 
-var string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elementum mauris, eu faucibus risus. Sed condimentum varius magna quis aliquam. Proin ut nunc finibus, eleifend nulla at, tempor lacus. Maecenas eu diam"
 
+function getMonth(value) {
+    switch (value) {
+        case 0: return "Januari";
+        case 1: return "Februari";
+        case 2: return "March";
+        case 3: return "April";
+        case 4: return "May";
+        case 5: return "June";
+        case 6: return "July";
+        case 7: return "August";
+        case 8: return "September";
+        case 9: return "October";
+        case 10: return "November";
+        case 11: return "December";
+    }
+}
 
-console.log(string.length);
