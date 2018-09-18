@@ -1,0 +1,184 @@
+﻿/*
+==================================================
+    Colors
+==================================================
+*/
+
+/*
+    #EEE - light grey
+    #777 - dark grey
+*/
+
+
+html, 
+body {
+    background-color: #EEE;
+    margin: 5px;
+    height: 98%;
+    font-size: 35px;
+}
+
+
+header {
+    flex-basis: 100%;
+}
+
+.app {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center
+}
+
+/*
+==================================================
+    Text styles
+==================================================
+*/
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.versus {
+    color: #777;
+    font-size: 60px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*
+==================================================
+    Header
+==================================================
+*/
+
+.nav_bar {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.icons {
+    width: 100px;
+    height: 100px;
+}
+
+.back_icon {
+    width: 160px;
+    height: 80px;
+}
+
+.sub_header {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+/*
+==================================================
+    Home page
+==================================================
+*/
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    flex-basis: 80%;
+}
+
+
+
+.inner_containter {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+/*TODO figure out how to use gradients with borders*/
+.upcomming_matches {
+    height: 90px;
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.inner_container {
+    flex-basis: 50%;
+}
+
+.next_game_date,
+.sub_title {
+    margin-bottom: 60px;
+}
+
+.match {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.team_logo {
+    width: 200px;
+    height: 200px
+}
+
+.news_wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.latest_news_title,
+.latest_news_article {
+    flex-basis: 100%;
+}
+
+.latest_news_article {
+    height: 210px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.weather_wrapper {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.weather_icon {
+    width: 150px;
+    height: 150px;
+}
+
+.data_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+
+.current_data {
+    font-size: 50px;
+    color: #777;
+}

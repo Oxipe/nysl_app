@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="reset.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <title>NYSL League</title>
+</head>
+<body>
+
+    <div class="app" id="app">
+        <header>
+            <nav class="nav_bar">
+                <div>
+                    <a href="#" v-on:click="setPageTitle('home')"><img class="icons" src="images\icons\home.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('news')"><img class="icons" src="images\icons\news.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('schedule')"><img class="icons" src="images\icons\schedule.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('results')"><img class="icons" src="images\icons\results.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('standings')"><img class="icons" src="images\icons\standings.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('chat')"><img class="icons" src="images\icons\chat.png" alt="" /></a>
+                </div>
+                <div>
+                    <a href="#" v-on:click="setPageTitle('settings')"><img class="icons" src="images\icons\settings.png" alt="" /></a>
+                </div>
+
+            </nav>
+
+            <div class="sub_header">
+                <div class="back_icon">
+                    <a href="#"><img class="back_icon" src="images\icons\back.png" alt="" /></a>
+                </div>
+
+                <div class="page_title">
+                    <h1>{{page_title}}</h1>
+                </div>
+            </div>
+        </header>
+
+
+        
+        <div v-if="home_page" class="main_container">
+            <div class="upcomming_matches">
+                <h2>Upcomming Matches</h2>
+            </div>
+
+            <div class="inner_containter">
+                <div class="next_game_date"><h2>Date template</h2></div>
+
+                <div class="match">
+                    <img src="images\team_logos\san_francisco_shock.png" alt="San Francisco Shock" class="team_logo" />
+                    <versus></versus>
+                    <img src="images\team_logos\los_angeles_valiant.png" alt="San Francisco Shock" class="team_logo" />
+                </div>
+                <div class="match">
+                    <img src="images\team_logos\san_francisco_shock.png" alt="San Francisco Shock" class="team_logo" />
+                    <versus></versus>
+                    <img src="images\team_logos\los_angeles_valiant.png" alt="San Francisco Shock" class="team_logo" />
+                </div>
+
+                <div class="news_wrapper">
+                    <h2 class="sub_title">Latest News</h2>
+                    <div class="latest_news_title">
+                        <h2>{{data.news[0].title}}</h2>
+                    </div>
+                    <div class="latest_news_article">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elementum mauris, eu faucibus risus. Sed condimentum varius magna quis aliquam. Proin ut nunc finibus, eleifend nulla at, tempor lacus. Maecenas eu diam...</p>
+                    </div>
+
+                    <div class="latest_news_title">
+                        <h2>{{data.news[1].title}}</h2>
+                    </div>
+                    <div class="latest_news_article">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elementum mauris, eu faucibus risus. Sed condimentum varius magna quis aliquam. Proin ut nunc finibus, eleifend nulla at, tempor lacus. Maecenas eu diam...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="weather" class="weather_wrapper">
+                <div>
+                    <img class="weather_icon" v-bind:src="weather_icon" alt="" />
+                </div>
+
+                <div class="data_wrapper">
+                    <p class="current_data" v-html="getTemperature()"></p>
+                </div>
+
+                <div class="data_wrapper">
+                    <p class="current_data">{{weather.list[0].main.humidity}}&percnt;</p>
+                    <img src="images\weather_icons\water_drop.png" alt=""/>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+    
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
