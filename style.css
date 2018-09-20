@@ -38,6 +38,7 @@ header {
 h1 {
     font-size: 60px;
     font-weight: bold;
+    color: #777;
 }
 
 h2 {
@@ -83,6 +84,10 @@ h2 {
     margin-bottom: 80px;
 }
 
+.page_title {
+    margin-right: 30px;
+}
+
 /*
 ==================================================
     Home page
@@ -105,6 +110,13 @@ h2 {
     flex-flow: row wrap;
 }
 
+.divider {
+    flex-basis: 100%;
+    height: 1px;
+    border-top: 1px solid #777;
+    margin-bottom: 40px;
+}
+
 /*TODO figure out how to use gradients with borders*/
 .upcomming_matches {
     height: 90px;
@@ -114,12 +126,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .inner_container {
     flex-basis: 50%;
-}.
+}
 
  .sub_title {
      flex-basis: 100%;
@@ -130,34 +142,27 @@ h2 {
     margin-bottom: 60px;
 }
 
-.match {
+.match,
+.small_match {
     flex-basis: 100%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.match {
     margin-bottom: 60px;
+}
+
+.small_match {
+    margin-bottom: 20px;
+    height: 120px;
 }
 
 .team_logo {
     width: 200px;
     height: 200px
-}
-
-.news_wrapper {
-    flex-basis: 100%;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.latest_news_title,
-.latest_news_article {
-    flex-basis: 100%;
-}
-
-.latest_news_article {
-    height: 210px;
-    margin-top: 5px;
-    margin-bottom: 30px;
 }
 
 .weather_wrapper {
@@ -166,7 +171,6 @@ h2 {
     justify-content: space-between;
     align-items: center;
     height: 150px;
-    margin-top: 20px;
 }
 
 .weather_icon {
@@ -185,4 +189,222 @@ h2 {
 .current_data {
     font-size: 50px;
     color: #777;
+}
+
+/*
+==================================================
+    News & detailed news page
+==================================================
+*/
+
+.news_wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.news_title,
+.news_article {
+    flex-basis: 100%;
+}
+
+.news_article,
+.news_full_article {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.news_article {
+    height: 210px;
+}
+
+/*
+==================================================
+    Game Schedule
+==================================================
+*/
+
+.selected_month {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.change_month {
+    height: 160px;
+    width: 80px;
+}
+
+.months_dropdown {
+    flex-basis: 20%;
+    height: 40px;
+    font-size: 31px;
+}
+
+.months_option {
+    width: 200px;
+}
+
+.small_logo {
+    width: 120px;
+    height: 120px;
+}
+
+.team_code {
+    width: 100px;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.home_team, 
+.away_team {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.match_result {
+    font-size: 60px;
+    font-weight: bold;
+    color: #777;
+}
+
+/*
+==================================================
+    Standings
+==================================================
+*/
+
+.standings {
+    flex-basis: 100%;
+}
+
+.standings th {
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.big_cell,
+.small_cell {
+    height: 55px;
+}
+
+.small_cell {
+    text-align: center;
+}
+
+.toggle {
+    flex-basis:100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 35px;
+}
+
+.info_button {
+    height: 160px;
+    width: 160px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.toggle div {
+    display: none;
+    flex-basis: 100%;
+    margin-top: 5px;
+}
+
+/*
+==================================================
+    Team details
+==================================================
+*/
+
+.team_header {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.team_position {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #777;
+}
+
+.team_stats {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.statistic {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #777;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistic_label, 
+.statistic_value {
+    flex-basis: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.team_members {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 40px;
+}
+
+.sub_header_team {
+    flex-basis: 100%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.list_of_team_members {
+    flex-basis: 100%;
+}
+
+.player {
+    margin: 10px 0;
+}
+
+/*
+==================================================
+    Settings
+==================================================
+*/
+
+.login {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+}
+
+.login_label, 
+.login_input {
+    flex-basis: 100%;
 }

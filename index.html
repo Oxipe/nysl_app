@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <link rel="stylesheet" href="reset.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -52,7 +53,7 @@
         </header>
 
 
-        
+        <!--Landing Page-->
         <div v-if="home_page" class="main_container">
             <div class="upcomming_matches">
                 <h2>Upcomming Matches</h2>
@@ -61,29 +62,33 @@
             <div class="inner_containter">
                 <div class="next_game_date"><h2>{{nextPlayDate}}</h2></div>
 
-                <div class="match" v-for="match in upcommingMatch">
+                <div class="match" v-for="(match, index) in upcommingMatch" v-on:click="showMatchDetails(index)">
                     <img v-bind:src="match.homeLogo" alt="match.homeName" class="team_logo" />
                     <versus></versus>
                     <img v-bind:src="match.awayLogo" alt="match.awayLogo" class="team_logo" />
                 </div>
 
+                <divider></divider>
+
                 <div class="news_wrapper">
                     <a href="#" v-on:click="setPageTitle('news')"><h2 class="sub_title">Latest News</h2></a>
-                    <div class="latest_news_title">
+                    <div class="news_title">
                         <h2>{{data.news[0].title}}</h2>
                     </div>
-                    <div class="latest_news_article">
-                        <p v-html="wrapNews(data.news[0].article)"></p>
+                    <div class="news_article">
+                        <a v-on:click="showNews('0')"><p v-html="wrapNews(data.news[0].article)"></p></a>
                     </div>
 
-                    <div class="latest_news_title">
+                    <div class="news_title">
                         <h2>{{data.news[1].title}}</h2>
                     </div>
-                    <div class="latest_news_article">
-                        <p v-html="wrapNews(data.news[1].article)"></p>
+                    <div class="news_article">
+                        <a v-on:click="showNews('1')"><p v-html="wrapNews(data.news[1].article)"></p></a>
                     </div>
                 </div>
             </div>
+
+            <divider></divider>
 
             <div id="weather" class="weather_wrapper">
                 <div>
@@ -101,6 +106,244 @@
             </div>
 
             
+        </div>
+        <!--News-->
+        <div v-if="news_page" class="main_container">
+            <div v-for="(news, index) in data.news" class="news_wrapper">
+                <div class="news_title">
+                    <h2>{{news.title}}</h2>
+                </div>
+                <div class="news_article">
+                    <a v-on:click="showNews(index)"><p v-html="wrapNews(news.article)"></p></a>
+                </div>
+                <divider></divider>
+            </div>
+        </div>
+        <!--Detailed News-->
+        <div v-if="full_news" class="main_container">
+            <div class="news_wrapper">
+                <div class="news_title">
+                    <h2>{{news_title}}</h2>
+                </div>
+                <div class="news_full_article">
+                    <p>{{news_article}}</p>
+                </div>
+            </div>
+        </div>
+        <!--Game schedule-->
+        <div v-if="schedule_page" class="main_container">
+            <div class="selected_month">
+                <div class="previous_month">
+                    <img class="change_month" src="images\icons\previous.png" alt="" v-on:click="previousMonth()"/>
+                </div>
+                <h2>{{selectedMonth}}</h2>
+                <div class="next_month">
+                    <img class="change_month" src="images\icons\next.png" alt="" v-on:click="nextMonth()"/>
+                </div>
+            </div>
+
+            <div v-on:click="showMatchDetails(index)" class="small_match" v-for="(match, index) in upcommingMatch">
+                <div class="home_team">
+                    <div class="team_code">
+                        {{match.homeCode}}
+                    </div>
+                    <div>
+                        <a href="#"><img v-bind:src="match.homeLogo" v-bind:alt="match.homeName" class="small_logo" /></a>
+                    </div>
+                </div>
+
+                <versus></versus>
+
+                <div class="away_team">
+                    <div>
+                        <!--Change link to event-->
+                        <a href="#"><img v-bind:src="match.awayLogo" v-bind:alt="match.awayName" class="small_logo"/></a>
+                    </div>
+                    <div class="team_code align_right">
+                        {{match.awayCode}}
+                    </div>
+                </div>
+
+                <divider></divider>
+            </div>
+             
+        </div>
+        <!--Detailed game information-->
+        <div v-if="detailed_match" class="main_container">
+            <div class="next_game_date">{{nextPlayDate}}</div>
+
+            <div class="match">
+                <img v-bind:src="matchHomeLogo" alt="" class="team_logo" />
+                <versus></versus>
+                <img v-bind:src="matchAwayLogo" alt="" class="team_logo" />
+            </div>
+
+            <div class="match_details">
+                <h2>Game Details:</h2>
+                
+                <div class="match_location">
+                    <p>Location: {{matchLocation}}</p>
+                    <p>Field: {{matchField}}</p>
+                    <p>Time: {{matchTime}}</p>
+                    <p>Referee:</p>
+                </div>
+
+            </div>
+        </div>
+        <!--Results page-->
+        <div v-if="results_page" class="main_container">
+            <div class="small_match" v-for="(match, index) in data.results">
+                <div class="home_team">
+                    <div class="team_code">
+                        {{match.home_party}}
+                    </div>
+                    <div>
+                        <a href="#"><img v-bind:src="getHomeLogo(match.home_party)" v-bind:alt="match.homeName" class="small_logo" /></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="match_result">{{match.result_home}}</p>
+                </div>
+                <versus></versus>
+                <div>
+                    <p class="match_result">{{match.result_away}}</p>
+                </div>
+                <div class="away_team">
+                    <div>
+                        <a href="#"><img v-bind:src="getAwayLogo(match.away_party)" v-bind:alt="match.awayName" class="small_logo" /></a>
+                    </div>
+                    <div class="team_code align_right">
+                        {{match.away_party}}
+                    </div>
+                </div>
+
+                <divider></divider>
+            </div>
+        </div>
+        <!--Standings-->
+        <div v-if="standings_page" class="main_container">
+            <table class="standings">
+                <thead>
+                    <tr>
+                        <th class="big_cell">Team Name</th>
+                        <th class="small_cell">GP</th>
+                        <th class="small_cell">GW</th>
+                        <th class="small_cell">GL</th>
+                        <th class="small_cell">GD</th>
+                        <th class="small_cell">TP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(team, index) in data.team">
+                        <td v-on:click="showTeamDetails(index)" class="big_cell">{{team.team_name}}</td>
+                        <td class="small_cell">{{team.games_played}}</td>
+                        <td class="small_cell">{{team.games_won}}</td>
+                        <td class="small_cell">{{team.games_lost}}</td>
+                        <td class="small_cell">{{team.games_draw}}</td>
+                        <td class="small_cell">{{team.total_points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="toggle">
+                <img class="info_button" onclick="toggle()" src="images\icons\info.png" alt="" />
+                <div id="toggle">
+                    <p>GP: Games Played</p>
+                    <p>GW: Games Won</p>
+                    <p>GL: Games Lost</p>
+                    <p>GD: Games Draw</p>
+                    <p>TP: Total Points</p>
+                </div>
+            </div>
+        </div>
+        <!--Team Details-->
+        <div v-if="team_details" class="main_container">
+            <div class="team_header">
+                <div class="team_logo">
+                    <img v-bind:src="teamDetails.logo" alt="teamDetails.team_name" />
+                </div>
+                <div class="team_position">
+                    {{currentPosition}}
+                </div>
+            </div>
+
+            <div class="team_stats">
+                <div class="statistic">
+                    <p class="statistic_label">GP</p>
+                    <p class="statistic_value">{{teamDetails.games_played}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">GW</p>
+                    <p class="statistic_value">{{teamDetails.games_won}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">GL</p>
+                    <p class="statistic_value">{{teamDetails.games_lost}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">GD</p>
+                    <p class="statistic_value">{{teamDetails.games_draw}}</p>
+                </div>
+            </div>
+            <div class="team_stats">
+                <div class="statistic">
+                    <p class="statistic_label">GF</p>
+                    <p class="statistic_value">{{teamDetails.goals_for}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">GA</p>
+                    <p class="statistic_value">{{teamDetails.goals_against}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">GS</p>
+                    <p class="statistic_value">{{teamDetails.goal_saldo}}</p>
+                </div>
+                <div class="statistic">
+                    <p class="statistic_label">TP</p>
+                    <p class="statistic_value">{{teamDetails.total_points}}</p>
+                </div>
+            </div>
+            <div class="team_members">
+                <div class="sub_header_team">
+                    <h2>Team Members:</h2>
+                </div>
+                <div class="list_of_team_members">
+                    <ul>
+                        <li class="player" v-for="player in data.team[currentPosition - 1].players">{{player}}</li>
+                    </ul>
+                </div>
+
+                <div class="toggle">
+                    <img class="info_button" onclick="toggle()" src="images\icons\info.png" alt="" />
+                    <div id="toggle">
+                        <p>GP: Games Played</p>
+                        <p>GW: Games Won</p>
+                        <p>GL: Games Lost</p>
+                        <p>GD: Games Draw</p>
+                        <p>GF: Goals For</p>
+                        <p>GA: Goals Against</p>
+                        <p>GS: Goal Saldo</p>
+                        <p>TP: Total Points</p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!--Settings-->
+        <div v-if="settings_page" class="main_container">
+            <div onclick="toggle()" class="log_in toggle">
+                <h1>Login</h1>
+
+                <div id="toggle log_in_box">
+                    <label class="login_label">Username</label>
+                    <input class="login_input" type="text" />
+                    <label class="login_label">Password</label>
+                    <input class="login_input" type="password" />
+                </div>
+            </div>
+
+
         </div>
 
     </div>
