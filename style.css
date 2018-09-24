@@ -109,7 +109,7 @@ h2 {
 
 
 .inner_containter {
-    flex-basis: 80%;
+    flex-basis: 100%;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
@@ -122,7 +122,6 @@ h2 {
     margin: 20px 0;
 }
 
-/*TODO figure out how to use gradients with borders*/
 .upcomming_matches {
     height: 90px;
     border-top: 1px solid #777;
@@ -132,10 +131,6 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
-}
-
-.inner_container {
-    flex-basis: 50%;
 }
 
  .sub_title {
@@ -276,6 +271,50 @@ h2 {
     font-size: 60px;
     font-weight: bold;
     color: #777;
+}
+
+.match_details {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 40px;
+}
+
+.match_location {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 20px;
+    font-size: 45px;
+}
+
+.label {
+    font-weight: bold;
+    flex-basis: 35%;
+    margin: 5px 0;
+}
+
+.label_content {
+    flex-basis: 65%;
+}
+
+.location {
+    flex-basis: 100%;
+    display: flex;
+    height: 600px;
+    border: 1px solid #777;
+    margin-top: 60px;
+}
+
+.map {
+    flex-basis: 100%;
+    height: 600px;
+}
+
+.no_matches {
+    font-size: 50px;
+    font-weight: bold;
+    color: darkred;
 }
 
 /*

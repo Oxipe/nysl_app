@@ -59,8 +59,9 @@
             </div>
         </div>
 
-        <!--Landing Page-->
+
         <div class="main_container content" id="content">
+            <!--Landing Page-->
             <div v-if="home_page" class="main_container">
                 <div v-on:click="setPageTitle('schedule')" class="upcomming_matches">
                     <h2>Upcomming Matches</h2>
@@ -69,10 +70,10 @@
                 <div class="inner_containter">
                     <div v-on:click="setPageTitle('schedule')" class="next_game_date"><h2>{{nextPlayDate}}</h2></div>
 
-                    <div class="match" v-for="(match, index) in upcommingMatch" v-on:click="showMatchDetails(index)">
-                        <img v-on:click="linkToTeam(match.homeCode)" v-bind:src="match.homeLogo" alt="match.homeName" class="team_logo" />
+                    <div id="match" class="match" v-for="(match, index) in upcommingMatch" v-on:click="showMatchDetails(index)">
+                        <img v-bind:src="match.homeLogo" alt="match.homeName" class="team_logo" />
                         <versus></versus>
-                        <img v-on:click="linkToTeam(match.awayCode)" v-bind:src="match.awayLogo" alt="match.awayLogo" class="team_logo" />
+                        <img v-bind:src="match.awayLogo" alt="match.awayLogo" class="team_logo" />
                     </div>
 
                     <divider></divider>
@@ -175,7 +176,7 @@
                 </div>
 
                 <div v-if="upcommingMatch.length === 0">
-                    <p>No matches to display</p>
+                    <p class="no_matches">No matches to display</p>
                 </div>
 
             </div>
@@ -184,24 +185,24 @@
                 <div class="next_game_date">{{nextPlayDate}}</div>
 
                 <div class="match">
-                    <img v-bind:src="matchHomeLogo" alt="" class="team_logo" />
+                    <img v-on:click="showTeamDetails(matchHomeCode)" v-bind:src="matchHomeLogo" alt="" class="team_logo" />
                     <versus></versus>
-                    <img v-bind:src="matchAwayLogo" alt="" class="team_logo" />
+                    <img v-on:click="showTeamDetails(matchAwayCode)" v-bind:src="matchAwayLogo" alt="" class="team_logo" />
                 </div>
 
                 <div class="match_details">
                     <h2>Game Details:</h2>
 
                     <div class="match_location">
-                        <p>Location: {{matchLocation}}</p>
-                        <p>Field: {{matchField}}</p>
-                        <p>Time: {{matchTime}}</p>
-                        <p>Referee:{{matchReferee}}</p>
+                        <p class="label">Location:</p> <p class="label_content">{{matchLocation}}</p>
+                        <p class="label">Field:</p> <p class="label_content">{{matchField}}</p>
+                        <p class="label">Time:</p> <p class="label_content">{{matchTime}}</p>
+                        <p class="label">Referee:</p> <p class="label_content">{{matchReferee}}</p>
                     </div>
                 </div>
 
                 <div class="location">
-
+                    <iframe id="map" class="map" v-bind:src="matchMapLocation"></iframe>
                 </div>
             </div>
             <!--Results page-->
@@ -365,7 +366,6 @@
             </div>
         </div>
     </div>
-
 
 
 

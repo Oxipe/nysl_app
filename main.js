@@ -61,10 +61,13 @@ function fillApp(data) {
             nextPlayDate: "",
             matchHomeLogo: "",
             matchAwayLogo: "",
+            matchHomeCode: "",
+            matchAwayCode: "",
             matchLocation: "",
             matchField: "",
             matchTime: "",
             matchReferee: "",
+            matchMapLocation: "",
             month: 0,
             currentPosition: 0,
             selectedMonth: "",
@@ -232,27 +235,32 @@ function fillApp(data) {
             },
             setUpcommingMatch: function () {
                 this.upcommingMatch = [];
-                var currentDate
+                var currentDate;
+
+                
 
                 var date = new Date();
                 date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
 
-                console.log(currentDate)
-                console.log(this.data.schedule.september[0].date)
+                var data = this.selectDataSet(this.months[date.getMonth()]);
 
-                for (var i = 0; i < this.data.schedule.september.length; i++) {
-                    if (currentDate < this.data.schedule.september[i].date) {
-                        this.nextPlayDate = this.data.schedule.september[i].date;
+                for (var i = 0; i < data.length; i++) {
+                    if (currentDate < data[i].date) {
+                        this.nextPlayDate = data[i].date;
                         
-                        for (var j = i; j < this.data.schedule.september.length; j++) {
-                            if (this.nextPlayDate === this.data.schedule.september[j].date) {
-                                var homeTeam = this.data.schedule.september[j].home_party;
-                                var awayTeam = this.data.schedule.september[j].away_party;
+                        for (var j = i; j < data.length; j++) {
+                            if (this.nextPlayDate === data[j].date) {
+                                var homeTeam = data[j].home_party;
+                                var awayTeam = data[j].away_party;
                                 var homeName;
                                 var awayName;
                                 var homeLogo;
                                 var awayLogo;
                                 var match;
+                                var location = data[j].location;
+                                var field = data[j].field;
+                                var time = data[j].game_time;
+                                var referee = data[j].referee;
 
                                 for (var k = 0; k < this.data.team.length; k++) {
                                     if (homeTeam === this.data.team[k].team_code) {
@@ -268,7 +276,9 @@ function fillApp(data) {
                                     }
                                 }
 
-                                this.schedule_page ? match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam) : match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo);
+                                match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam, location, field, time, referee);
+
+                                //this.schedule_page ? match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam) : match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo);
 
                                 this.upcommingMatch.push(match);
                             }
@@ -278,44 +288,14 @@ function fillApp(data) {
                 }
             },
             createFullSchedule: function (month) {
-                console.log("RE-CREATE THE JSON DATA TO DISPLAY DYNAMIC MONTHS AND SET CONDITION TO CHECK FOR 09/09")
-
                 this.upcommingMatch = [];
 
-                var data;
+                var data = this.selectDataSet(month);
 
                 var date = new Date();
 
-                switch (month) {
-                    case "Januari": data = this.data.schedule.januari;
-                        break;
-                    case "Februari": data = this.data.schedule.februari;
-                        break;
-                    case "March": data = this.data.schedule.march;
-                        break;
-                    case "April": data = this.data.schedule.april;
-                        break;
-                    case "May": data = this.data.schedule.may;
-                        break;
-                    case "June": data = this.data.schedule.june;
-                        break;
-                    case "July": data = this.data.schedule.july;
-                        break;
-                    case "August": data = this.data.schedule.august;
-                        break;
-                    case "September": data = this.data.schedule.september;
-                        break;
-                    case "October": data = this.data.schedule.october;
-                        break;
-                    case "November": data = this.data.schedule.november;
-                        break;
-                    case "December": data = this.data.schedule.december;
-                        break;
-                }
-
                 date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
-                console.log(data)
-
+                
                 if (data !== undefined) {
                     for (var i = 0; i < data.length; i++) {
                         if (currentDate < data[i].date) {
@@ -332,9 +312,6 @@ function fillApp(data) {
                                 var field = data[j].field;
                                 var time = data[j].game_time;
                                 var referee = data[j].referee;
-
-                                console.log(data)
-                                console.log(location)
 
                                 for (var k = 0; k < this.data.team.length; k++) {
                                     if (homeTeam === this.data.team[k].team_code) {
@@ -358,10 +335,6 @@ function fillApp(data) {
                         }
                     }
                 }
-                
-
-                console.log(this.upcommingMatch)
-
             },
             CreateMatch: function (homeName, awayName, homeLogo, awayLogo, homeCode, awayCode, location, field, time, referee) {
                 this.homeName = homeName;
@@ -377,30 +350,30 @@ function fillApp(data) {
             },
             showMatchDetails: function (value) {
                 var match = this.upcommingMatch[value];
+
+                console.log(match)
+
                 this.home_page = false;
                 this.schedule_page = false;
                 this.detailed_match = true;
-
-                console.log(this.upcommingMatch);
-                console.log(this.upcommingMatch[value].homeName);
 
                 this.page_title = match.homeCode + " - " + match.awayCode;
                 this.nextPlayDate = match.date;
 
                 this.matchHomeLogo = match.homeLogo;
                 this.matchAwayLogo = match.awayLogo;
+                this.matchHomeCode = match.homeCode;
+                this.matchAwayCode = match.awayCode;
 
                 this.matchLocation = match.location;
                 this.matchField = match.field;
                 this.matchTime = match.time;
                 this.matchReferee = match.referee;
 
-                console.log(match)
 
-                console.log(this.matchLocation = match.location);
-                console.log(this.matchField = match.field);
-                console.log(this.matchTime = match.time);
-                console.log(this.matchReferee = match.referee);
+                for (var i = 0; i < data.locations.length; i++) {
+                    if (data.locations[i].name === match.location) this.matchMapLocation = data.locations[i].map;
+                }
             },
             showNews: function (value) {
                 this.home_page = false;
@@ -424,8 +397,17 @@ function fillApp(data) {
                 }
             },
             showTeamDetails: function (value) {
+                this.detailed_match = false;
                 this.standings_page = false;
                 this.team_details = true;
+
+                console.log(this.detailed_match)
+
+                if (isNaN(value)) {
+                    for (var i = 0; i < this.data.team.length; i++) {
+                        if (value === this.data.team[i].team_code) value = i;
+                    }
+                }
 
                 this.page_title = data.team[value].team_name;
 
@@ -444,7 +426,25 @@ function fillApp(data) {
                 document.getElementById("loadingWrapper").style.visibility = "hidden";
                 document.getElementById("subHeader").style.visibility = "visible";
                 document.getElementById("content").style.visibility = "visible";
-                //document.getElementById("mainContainer").style.visibility = "visible";
+            },
+            selectDataSet: function (month) {
+                switch(month) {
+                    case "Januari": return this.data.schedule.januari;
+                    case "Februari": return this.data.schedule.februari;
+                    case "March": return this.data.schedule.march;
+                    case "April": return this.data.schedule.april;
+                    case "May": return this.data.schedule.may;
+                    case "June": return this.data.schedule.june;
+                    case "July": return this.data.schedule.july;
+                    case "August": return this.data.schedule.august;
+                    case "September": return this.data.schedule.september;
+                    case "October": return this.data.schedule.october;
+                    case "November": return this.data.schedule.november;
+                    case "December": return this.data.schedule.december;
+                }
+            },
+            getFullMap: function () {
+                console.log("Full map")
             }
         }
     });
@@ -470,29 +470,7 @@ function displayWeather(data) {
     });
 }
 
-/*
-function getMonth(value) {
-    switch (value) {
-        case 0: return "Januari";
-        case 1: return "Februari";
-        case 2: return "March";
-        case 3: return "April";
-        case 4: return "May";
-        case 5: return "June";
-        case 6: return "July";
-        case 7: return "August";
-        case 8: return "September";
-        case 9: return "October";
-        case 10: return "November";
-        case 11: return "December";
-    }
-}
-*/
 function toggle() {
     $("#toggle").slideToggle();
 }
 
-function removeLoadingIcon() {
-
-
-}
