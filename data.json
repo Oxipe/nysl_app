@@ -1,444 +1,645 @@
 {
-    "team": [
-        {
-            "team_name" : "Boston Uprising",
-            "team_code" : "BOS",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Neko", "Striker", "AimGod", "Kellex", "Gamsu", "NotE"],
-            "logo" : "images/team_logos/boston_uprising.png"
-        },
-        {
-            "team_name" : "Dallas Fuel",
-            "team_code" : "DAL",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["HarryHook", "Mickie", "aKm", "Unkoe", "OGE", "Taimou", "EFFECT"],
-            "logo" : "images/team_logos/dallas_fuel.png"
-        },
-        {
-            "team_name" : "Florida Mayhem",
-            "team_code" : "FLA",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Sayaplayer", "TviQ", "XepheR", "aWesomeGuy"],
-            "logo" : "images/team_logos/florida_mayhem.png" 
-        },
-        {
-            "team_name" : "Houston Outlaws",
-            "team_code" : "HOU",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Muma", "Bani", "SPREE", "Arhan", "Boink", "Rawkus", "LiNkzr", "Jake", "Coolmatt"],
-            "logo" : "images/team_logos/houston_outlaws.png"
-        },
-        {
-            "team_name" : "London Spitfire",
-            "team_code" : "LON",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Gesture", "birdring", "Bdosin", "NUS", "Fury", "Profit", "Closer"],
-            "logo" : "images/team_logos/london_spitfire.png"
-        },
-        {
-            "team_name" : "Los Angeles Gladiators",
-            "team_code" : "GLA",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Surefour", "Void", "Bischu", "Shaz", "Hydration", "BigGoose"],
-            "logo" : "images/team_logos/los_angeles_gladiators.png"
-        },
-        {
-            "team_name" : "Los Angeles Valiant",
-            "team_code" : "VAL",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Kariv", "Bunny", "Fate", "Custa", "Space", "Kuki", "KSF", "Izayaki", "Agilities", "Soon"],
-            "logo" : "images/team_logos/los_angeles_valiant.png"
-        },
-        {
-            "team_name" : "New York Excelsior",
-            "team_code" : "NYE",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Saebyeolbe", "Meko", "Anamo", "Pine", "Jjonak", "Mano", "Libero", "Ark"],
-            "logo" : "images/team_logos/new_york_excelsior.png"
-        },
-        {
-            "team_name" : "Philadelphia Fusion",
-            "team_code" : "PHI",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Boombox", "Hotba", "Poko", "Carpe", "Snillo", "SADO", "fragi", "Eqo", "Neptuno"],
-            "logo" : "images/team_logos/philadelphia_fusion.png"
-        },
-        {
-            "team_name" : "San Francisco Shock",
-            "team_code" : "SFS",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Choihyobin", "Moth", "super", "BABYBAY", "sinatraa", "sleepy", "Danteh", "Nevix", "Architect"],
-            "logo" : "images/team_logos/san_francisco_shock.png"
-        },
-        {
-            "team_name" : "Seoul Dynasty",
-            "team_code" : "SEO",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["ryujehong", "Fissure", "ZUNBA", "Munchkin", "FLETA", "tobi"],
-            "logo" : "images/team_logos/seoul_dynasty.png"
-        },
-        {
-            "team_name" : "Shanghai Dragons",
-            "team_code" : "SHO",
-            "games_played" : 0,
-            "games_won" : 0,
-            "games_draw" : 0,
-            "games_lost" : 0,
-            "goals_for" : 0,
-            "goals_against" : 0,
-            "goal_saldo" : 0,
-            "total_points" : 0,
-            "players" : ["Geguri", "Diya", "Fearless"],
-            "logo" : "images/team_logos/shanghai_dragons.png"
-        }
-    ], 
-    "schedule" : 
-        {
-            "September" : [
-                {
-                    "home_party" : "SFS",
-                    "away_party" : "VAL",
-                    "location" : "AJ Katzenmaier",
-                    "field" : "1",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "John Johnsen",
-                    "date" : "September 01"
-                },
-                {
-                    "home_party" : "SHO",
-                    "away_party" : "GLA",
-                    "location" : "Greenbay",
-                    "field" : "2",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "September 01"
-                },
-                {
-                    "home_party" : "DAL",
-                    "away_party" : "SEO",
-                    "location" : "Howard A Yeager",
-                    "field" : "1",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "September 08"
-                },
-                {
-                    "home_party" : "LON",
-                    "away_party" : "FLA",
-                    "location" : "Marjorie P Hart",
-                    "field" : "4",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "John Johnsen",
-                    "date" : "September 08"
-                },
-                {
-                    "home_party" : "PHI",
-                    "away_party" : "HOU",
-                    "location" : "North",
-                    "field" : "1",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "September 15"
-                },
-                {
-                    "home_party" : "BOS",
-                    "away_party" : "NYE",
-                    "location" : "AJ Katzenmaier",
-                    "field" : "2",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "September 15"
-                },
-                {
-                    "home_party" : "VAL",
-                    "away_party" : "DAL",
-                    "location" : "South",
-                    "field" : "1",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "John Johnsen",
-                    "date" : "September 22"
-                },
-                {
-                    "home_party" : "FLA",
-                    "away_party" : "BOS",
-                    "location" : "Howard A Yeager",
-                    "field" : "2",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "September 22"
-                },
-                {
-                    "home_party" : "SFS",
-                    "away_party" : "SHO",
-                    "location" : "Greenbay",
-                    "field" : "1",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "September 29"
-                }
-            ],
-            "October" : [
-                {
-                    "home_party" : "SFS",
-                    "away_party" : "PHI",
-                    "location" : "Marjonie P Hart",
-                    "field" : "2",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "October 06"
-                },
-                {
-                    "home_party" : "FLA",
-                    "away_party" : "SEO",
-                    "location" : "South",
-                    "field" : "1",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "October 06"
-                },
-                {
-                    "home_party" : "HOU",
-                    "away_party" : "SHO",
-                    "location" : "Howard A Yeager",
-                    "field" : "4",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "John Johnsen",
-                    "date" : "October 13"
-                },
-                {
-                    "home_party" : "DAL",
-                    "away_party" : "HOU",
-                    "location" : "Greenbay",
-                    "field" : "1",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "October 13"
-                },
-                {
-                    "home_party" : "NYE",
-                    "away_party" : "VAL",
-                    "location" : "North",
-                    "field" : "2",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "October 20"
-                },
-                {
-                    "home_party" : "SEO",
-                    "away_party" : "BOS",
-                    "location" : "Marjorie P Hart",
-                    "field" : "1",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "John Johnsen",
-                    "date" : "October 20"
-                },
-                {
-                    "home_party" : "SHO",
-                    "away_party" : "FLA",
-                    "location" : "AJ Katzenmaier",
-                    "field" : "3",
-                    "game_time" : "9:30 a.m.",
-                    "referee" : "Dick Dicksen",
-                    "date" : "October 27"
-                },        
-                {
-                    "home_party" : "LON",
-                    "away_party" : "DAL",
-                    "location" : "Greenbay",
-                    "field" : "1",
-                    "game_time" : "1:00 p.m.",
-                    "referee" : "Bob Bobsen",
-                    "date" : "October 27"
-                }
-            ]
-        },
-    "news" : [
-        {
-            "title" : "Spitfire spits on the Shocks",
-            "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
-        },
-        {
-            "title" : "Dynasty slips pass Outlaws",
-            "article" : "Praesent in nisl ac nulla condimentum eleifend. Morbi aliquam tincidunt pretium. Sed porta maximus maximus. Sed ac volutpat purus. Nulla malesuada lacinia consectetur. Pellentesque quis volutpat erat. Ut gravida faucibus cursus. In sed est porta, scelerisque lectus eget, ornare eros. Cras hendrerit urna lorem, vel tincidunt eros tempor non. Aenean suscipit neque nibh, ac dapibus leo pretium at."
-        },
-        {
-          "title": "Late win for Boston Fuel",
-          "article": "Integer molestie est dolor, eu ultricies enim ornare id. Donec mollis bibendum est, ut ornare libero bibendum in. In arcu ipsum, finibus sed varius at, vestibulum et mi. Vivamus eleifend tincidunt eros, vitae dictum dui convallis et. Fusce diam sapien, porta vel enim sed, posuere consectetur felis. Curabitur porta nibh quis molestie iaculis. Aliquam erat volutpat."
-        },
-        {
-          "title": "Valiants takes down the Gladiators",
-          "article": "In dignissim augue ac metus ullamcorper porttitor. Suspendisse at placerat enim, vel ornare urna. Sed pretium velit eget felis pellentesque, at egestas dolor varius. Ut ipsum odio, egestas non suscipit non, pretium quis purus. Praesent maximus tellus vitae sem efficitur, congue ultrices felis cursus. Pellentesque eu justo a justo molestie finibus ut a sapien. Mauris sit amet fermentum lorem. Sed augue leo, pulvinar nec lobortis nec, dictum a mauris. Sed luctus commodo nisl, a lobortis nibh."
-        },
-        {
-          "title": "Dalles Fuel ignites the Mayhem",
-          "article": "Phasellus vitae magna eget ligula fringilla interdum. Proin elementum justo a leo finibus, at rutrum lorem ornare. Proin magna magna, venenatis id dui a, imperdiet hendrerit ligula. Aliquam vel urna euismod, semper enim nec, consectetur mauris. Phasellus luctus congue scelerisque. Vivamus iaculis tellus in venenatis eleifend. Phasellus sit amet ipsum efficitur, tincidunt nibh id, dapibus purus."
-        },
-        {
-            "title" : "Dynasty takes the win",
-            "article" : "Suspendisse elementum efficitur velit sit amet eleifend. Curabitur pellentesque velit vitae consectetur molestie. Praesent mattis sapien ac tellus viverra, scelerisque malesuada metus bibendum. Aliquam in tincidunt est. Nunc scelerisque malesuada pellentesque. Proin fermentum pretium turpis. Curabitur viverra odio ac arcu ullamcorper, tristique varius nibh molestie. Nam volutpat nec leo a varius."
-        }
-    ],
-    "results" : [
-        {
-            "date" : "August 7th",
-            "home_party" : "FLA",
-            "away_party" : "SFS",
-            "result_home" : 1,
-            "result_away" : 3
-        },
+  "team": [
+    {
+      "team_name" : "Boston Uprising",
+      "team_code" : "BOS",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Neko", "Striker", "AimGod", "Kellex", "Gamsu", "NotE"],
+      "logo" : "images/team_logos/boston_uprising.png"
+    },
+    {
+      "team_name" : "Dallas Fuel",
+      "team_code" : "DAL",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["HarryHook", "Mickie", "aKm", "Unkoe", "OGE", "Taimou", "EFFECT"],
+      "logo" : "images/team_logos/dallas_fuel.png"
+    },
+    {
+      "team_name" : "Florida Mayhem",
+      "team_code" : "FLA",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Sayaplayer", "TviQ", "XepheR", "aWesomeGuy"],
+      "logo" : "images/team_logos/florida_mayhem.png" 
+    },
+    {
+      "team_name" : "Houston Outlaws",
+      "team_code" : "HOU",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Muma", "Bani", "SPREE", "Arhan", "Boink", "Rawkus", "LiNkzr", "Jake", "Coolmatt"],
+      "logo" : "images/team_logos/houston_outlaws.png"
+    },
+    {
+      "team_name" : "London Spitfire",
+      "team_code" : "LON",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Gesture", "birdring", "Bdosin", "NUS", "Fury", "Profit", "Closer"],
+      "logo" : "images/team_logos/london_spitfire.png"
+    },
+    {
+      "team_name" : "Los Angeles Gladiators",
+      "team_code" : "GLA",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Surefour", "Void", "Bischu", "Shaz", "Hydration", "BigGoose"],
+      "logo" : "images/team_logos/los_angeles_gladiators.png"
+    },
+    {
+      "team_name" : "Los Angeles Valiant",
+      "team_code" : "VAL",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Kariv", "Bunny", "Fate", "Custa", "Space", "Kuki", "KSF", "Izayaki", "Agilities", "Soon"],
+      "logo" : "images/team_logos/los_angeles_valiant.png"
+    },
+    {
+      "team_name" : "New York Excelsior",
+      "team_code" : "NYE",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Saebyeolbe", "Meko", "Anamo", "Pine", "Jjonak", "Mano", "Libero", "Ark"],
+      "logo" : "images/team_logos/new_york_excelsior.png"
+    },
+    {
+      "team_name" : "Philadelphia Fusion",
+      "team_code" : "PHI",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Boombox", "Hotba", "Poko", "Carpe", "Snillo", "SADO", "fragi", "Eqo", "Neptuno"],
+      "logo" : "images/team_logos/philadelphia_fusion.png"
+    },
+    {
+      "team_name" : "San Francisco Shock",
+      "team_code" : "SFS",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Choihyobin", "Moth", "super", "BABYBAY", "sinatraa", "sleepy", "Danteh", "Nevix", "Architect"],
+      "logo" : "images/team_logos/san_francisco_shock.png"
+    },
+    {
+      "team_name" : "Seoul Dynasty",
+      "team_code" : "SEO",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["ryujehong", "Fissure", "ZUNBA", "Munchkin", "FLETA", "tobi"],
+      "logo" : "images/team_logos/seoul_dynasty.png"
+    },
+    {
+      "team_name" : "Shanghai Dragons",
+      "team_code" : "SHO",
+      "games_played" : 0,
+      "games_won" : 0,
+      "games_draw" : 0,
+      "games_lost" : 0,
+      "goals_for" : 0,
+      "goals_against" : 0,
+      "goal_saldo" : 0,
+      "total_points" : 0,
+      "players" : ["Geguri", "Diya", "Fearless"],
+      "logo" : "images/team_logos/shanghai_dragons.png"
+    }
+  ],
+  "schedule": {
+    "september": [
       {
-        "date": "August 7th",
-        "home_party": "VAL",
-        "away_party": "SFS",
-        "result_home": 3,
-        "result_away": 2
+        "home_party": "SFS",
+        "away_party": "VAL",
+        "location": "AJ Katzenmaier",
+        "field": "1",
+        "game_time": "9:30 a.m.",
+        "referee": "John Johnsen",
+        "date": "09/01"
       },
-        {
-            "date" : "August 7th",
-            "home_party" : "SEO",
-            "away_party" : "SHO",
-            "result_home" : 4,
-            "result_away" : 0
-        },
-        {
-            "date" : "August 7th",
-            "home_party" : "GLA",
-            "away_party" : "LON",
-            "result_home" : 3,
-            "result_away" : 2
-        },
-        {
-            "date" : "August 8th",
-            "home_party" : "DAL",
-            "away_party" : "HOU",
-            "result_home" : 3,
-            "result_away" : 2
-        },
-        {
-            "date" : "August 8th",
-            "home_party" : "NYE",
-            "away_party" : "BOS",
-            "result_home" : 3,
-            "result_away" : 1
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "SFS",
-            "away_party" : "LON",
-            "result_home" : 0,
-            "result_away" : 4
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "SEO",
-            "away_party" : "HOU",
-            "result_home" : 2,
-            "result_away" : 1
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "SHO",
-            "away_party" : "BOS",
-            "result_home" : 2,
-            "result_away" : 3
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "VAL",
-            "away_party" : "GLA",
-            "result_home" : 3,
-            "result_away" : 1
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "FLA",
-            "away_party" : "DAL",
-            "result_home" : 1,
-            "result_away" : 3
-        },
-        {
-            "date" : "August 9th",
-            "home_party" : "SEO",
-            "away_party" : "NYE",
-            "result_home" : 3,
-            "result_away" : 1
-        }
+      {
+        "home_party": "SHO",
+        "away_party": "GLA",
+        "location": "Greenbay",
+        "field": "2",
+        "game_time": "1:00 p.m.",
+        "referee": "Dick Dicksen",
+        "date": "09/01"
+      },
+      {
+        "home_party": "DAL",
+        "away_party": "SEO",
+        "location": "Howard A Yeager",
+        "field": "1",
+        "game_time": "9:30 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "09/08"
+      },
+      {
+        "home_party": "LON",
+        "away_party": "FLA",
+        "location": "Marjorie P Hart",
+        "field": "4",
+        "game_time": "1:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "09/08"
+      },
+      {
+        "home_party": "PHI",
+        "away_party": "HOU",
+        "location": "North",
+        "field": "1",
+        "game_time": "9:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "09/15"
+      },
+      {
+        "home_party": "BOS",
+        "away_party": "NYE",
+        "location": "AJ Katzenmaier",
+        "field": "2",
+        "game_time": "9:30 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "09/15"
+      },
+      {
+        "home_party": "VAL",
+        "away_party": "DAL",
+        "location": "South",
+        "field": "1",
+        "game_time": "1:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "09/22"
+      },
+      {
+        "home_party": "FLA",
+        "away_party": "BOS",
+        "location": "Howard A Yeager",
+        "field": "2",
+        "game_time": "9:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "09/22"
+      },
+      {
+        "home_party": "SFS",
+        "away_party": "SHO",
+        "location": "Greenbay",
+        "field": "1",
+        "game_time": "9:30 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "09/29"
+      }
+    ],
+    "october": [
+      {
+        "home_party": "SFS",
+        "away_party": "PHI",
+        "location": "Marjonie P Hart",
+        "field": "2",
+        "game_time": "9:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "10/06"
+      },
+      {
+        "home_party": "FLA",
+        "away_party": "SEO",
+        "location": "South",
+        "field": "1",
+        "game_time": "1:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "10/06"
+      },
+      {
+        "home_party": "HOU",
+        "away_party": "SHO",
+        "location": "Howard A Yeager",
+        "field": "4",
+        "game_time": "9:30 a.m.",
+        "referee": "John Johnsen",
+        "date": "10/13"
+      },
+      {
+        "home_party": "DAL",
+        "away_party": "HOU",
+        "location": "Greenbay",
+        "field": "1",
+        "game_time": "1:00 p.m.",
+        "referee": "Dick Dicksen",
+        "date": "10/13"
+      },
+      {
+        "home_party": "NYE",
+        "away_party": "VAL",
+        "location": "North",
+        "field": "2",
+        "game_time": "9:30 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "10/20"
+      },
+      {
+        "home_party": "SEO",
+        "away_party": "BOS",
+        "location": "Marjorie P Hart",
+        "field": "1",
+        "game_time": "1:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "10/20"
+      },
+      {
+        "home_party": "SHO",
+        "away_party": "FLA",
+        "location": "AJ Katzenmaier",
+        "field": "3",
+        "game_time": "9:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "10/27"
+      },
+      {
+        "home_party": "LON",
+        "away_party": "DAL",
+        "location": "Greenbay",
+        "field": "1",
+        "game_time": "1:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "10/27"
+      }
+    ],
+    "november": [
+      {
+        "home_party": "SFS",
+        "away_party": "LON",
+        "location": "North",
+        "field": "2",
+        "game_time": "09:30 a.m.",
+        "referee": "Dick Diksen",
+        "date": "11/03"
+      },
+      {
+        "home_party": "SHO",
+        "away_party": "SEO",
+        "location": "Marjorie P Hart",
+        "field": "1",
+        "game_time": "01:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "11/03"
+      },
+      {
+        "home_party": "GLA",
+        "away_party": "VAL",
+        "location": "Greenbay",
+        "field": "3",
+        "game_time": "09:00 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "11/10"
+      },
+      {
+        "home_party": "BOS",
+        "away_party": "LON",
+        "location": "South",
+        "field": "1",
+        "game_time": "01:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "11/10"
+      },
+      {
+        "home_party": "PHI",
+        "away_party": "NYE",
+        "location": "AJ Katzenmaier",
+        "field": "1",
+        "game_time": "09:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "11/17"
+      },
+      {
+        "home_party": "HOU",
+        "away_party": "FLA",
+        "location": "Howard A Yeager",
+        "field": "4",
+        "game_time": "01:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "11/17"
+      },
+      {
+        "home_party": "SEO",
+        "away_party": "NYE",
+        "location": "AJ Katzenmaier",
+        "field": "2",
+        "game_time": "09:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "11/24"
+      },
+      {
+        "home_party": "SHO",
+        "away_party": "PHI",
+        "location": "South",
+        "field": "3",
+        "game_time": "01:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "11/24"
+      },
+      {
+        "home_party": "DAL",
+        "away_party": "SFS",
+        "location": "Howard A Yeager",
+        "field": "2",
+        "game_time": "01:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "11/24"
+      }
+    ],
+    "december": [
+      {
+        "home_party": "VAL",
+        "away_party": "PHI",
+        "location": "Greenbay",
+        "field": "1",
+        "game_time": "09:30",
+        "referee": "Bob Bobsen",
+        "date": "12/01"
+      },
+      {
+        "home_party": "FLA",
+        "away_party": "GLA",
+        "location": "South",
+        "field": "1",
+        "game_time": "01:00 p.m.",
+        "referee": "Dick Dicksen",
+        "date": "12/01"
+      },
+      {
+        "home_party": "HOU",
+        "away_party": "SFS",
+        "location": "Marjorie P Hart",
+        "field": "2",
+        "game_time": "01:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "12/01"
+      },
+      {
+        "home_party": "PHI",
+        "away_party": "DAL",
+        "location": "AJ Katzenmaier",
+        "field": "3",
+        "game_time": "09:30 a.m.",
+        "referee": "John Johnsen",
+        "date": "12/08"
+      },
+      {
+        "home_party": "NYE",
+        "away_party": "SHO",
+        "location": "Howard A Yeager",
+        "field": "2",
+        "game_time": "01:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "12/08"
+      },
+      {
+        "home_party": "LON",
+        "away_party": "SEO",
+        "location": "South",
+        "field": "2",
+        "game_time": "01:00 p.m.",
+        "referee": "Dick Dicksen",
+        "date": "12/08"
+      },
+      {
+        "home_party": "SFS",
+        "away_party": "FLA",
+        "location": "North",
+        "field": "1",
+        "game_time": "09:30 a.m.",
+        "referee": "Dick Dicksen",
+        "date": "12/15"
+      },
+      {
+        "home_party": "SEO",
+        "away_party": "HOU",
+        "location": "Greenbay",
+        "field": "2",
+        "game_time": "09:30 a.m.",
+        "referee": "Bob Bobsen",
+        "date": "12/15"
+      },
+      {
+        "home_party": "GLA",
+        "away_party": "BOS",
+        "location": "Greenbay",
+        "field": "1",
+        "game_time": " 01:00 p.m.",
+        "referee": "Bob Bobsen",
+        "date": "12/15"
+      },
+      {
+        "home_party": "SHO",
+        "away_party": "LON",
+        "location": "Marjorie P Hart",
+        "field": "1",
+        "game_time": "01:00 p.m.",
+        "referee": "John Johnsen",
+        "date": "12/15"
+      }
     ]
+  },
+  "locations": [
+    {
+      "name": "AJ Katzenmaier",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.7810520615826!2d-87.86492878454477!3d42.3258684791892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f932fbc6ba7cd%3A0xcf2bbe275c6da815!2sA+J+Katzenmaier+Elementary+School!5e0!3m2!1snl!2snl!4v1537776390325"
+    },
+    {
+      "name": "Greenbay",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.0110120093336!2d-87.87105288457266!3d42.32096387918951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f933bce5af881%3A0x740a7a7d548adce1!2sGreenbay+Elementary+School+(K-5)!5e0!3m2!1snl!2snl!4v1537776534752"
+    },
+    {
+      "name": "Howard A Yeager",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.270062631386!2d-87.85606978457282!3d42.31543827918993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880feccac26b07c5%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1snl!2snl!4v1537776677413"
+    },
+    {
+      "name": "Marjorie P Hart",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.289839348975!2d-87.64816138458515!3d41.92962287921809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1snl!2snl!4v1537776753804"
+    },
+    {
+      "name": "North",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.336302541985!2d-87.64835588467041!3d41.90712867157635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1532078029364"
+    },
+    {
+      "name": "South",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7478346106823!2d-87.65355788467006!3d41.919779270784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1532077965028"
+    }
+
+  ],
+  "news" : [
+    {
+        "title" : "Spitfire spits on the Shocks",
+        "article" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta arcu sem, tempus scelerisque dolor euismod fermentum. Nullam sodales, orci volutpat scelerisque posuere, arcu tortor lobortis diam, a porta ante leo ac ex. Sed eget mauris vel nunc pulvinar ultrices vel ut dolor. Proin egestas gravida nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean dignissim neque sit amet sagittis convallis. Suspendisse vel diam magna. Donec sit amet nisi nisi. Ut tempus posuere nibh, ac condimentum justo commodo vitae. Suspendisse quis enim sit amet libero volutpat interdum ut ut dolor. Integer condimentum, lacus in dignissim fringilla, ligula felis mattis lectus, eu condimentum neque lorem a mi."
+    },
+    {
+        "title" : "Dynasty slips pass Outlaws",
+        "article" : "Praesent in nisl ac nulla condimentum eleifend. Morbi aliquam tincidunt pretium. Sed porta maximus maximus. Sed ac volutpat purus. Nulla malesuada lacinia consectetur. Pellentesque quis volutpat erat. Ut gravida faucibus cursus. In sed est porta, scelerisque lectus eget, ornare eros. Cras hendrerit urna lorem, vel tincidunt eros tempor non. Aenean suscipit neque nibh, ac dapibus leo pretium at."
+    },
+    {
+      "title": "Late win for Boston Fuel",
+      "article": "Integer molestie est dolor, eu ultricies enim ornare id. Donec mollis bibendum est, ut ornare libero bibendum in. In arcu ipsum, finibus sed varius at, vestibulum et mi. Vivamus eleifend tincidunt eros, vitae dictum dui convallis et. Fusce diam sapien, porta vel enim sed, posuere consectetur felis. Curabitur porta nibh quis molestie iaculis. Aliquam erat volutpat."
+    },
+    {
+      "title": "Valiants takes down the Gladiators",
+      "article": "In dignissim augue ac metus ullamcorper porttitor. Suspendisse at placerat enim, vel ornare urna. Sed pretium velit eget felis pellentesque, at egestas dolor varius. Ut ipsum odio, egestas non suscipit non, pretium quis purus. Praesent maximus tellus vitae sem efficitur, congue ultrices felis cursus. Pellentesque eu justo a justo molestie finibus ut a sapien. Mauris sit amet fermentum lorem. Sed augue leo, pulvinar nec lobortis nec, dictum a mauris. Sed luctus commodo nisl, a lobortis nibh."
+    },
+    {
+      "title": "Dalles Fuel ignites the Mayhem",
+      "article": "Phasellus vitae magna eget ligula fringilla interdum. Proin elementum justo a leo finibus, at rutrum lorem ornare. Proin magna magna, venenatis id dui a, imperdiet hendrerit ligula. Aliquam vel urna euismod, semper enim nec, consectetur mauris. Phasellus luctus congue scelerisque. Vivamus iaculis tellus in venenatis eleifend. Phasellus sit amet ipsum efficitur, tincidunt nibh id, dapibus purus."
+    },
+    {
+      "title" : "Dynasty takes the win",
+      "article" : "Suspendisse elementum efficitur velit sit amet eleifend. Curabitur pellentesque velit vitae consectetur molestie. Praesent mattis sapien ac tellus viverra, scelerisque malesuada metus bibendum. Aliquam in tincidunt est. Nunc scelerisque malesuada pellentesque. Proin fermentum pretium turpis. Curabitur viverra odio ac arcu ullamcorper, tristique varius nibh molestie. Nam volutpat nec leo a varius."
+    }
+  ],
+  "results" : [
+    {
+        "date" : "August 7th",
+        "home_party" : "FLA",
+        "away_party" : "SFS",
+        "result_home" : 1,
+        "result_away" : 3
+    },
+    {
+      "date": "August 7th",
+      "home_party": "VAL",
+      "away_party": "SFS",
+      "result_home": 3,
+      "result_away": 2
+    },
+    {
+        "date" : "August 7th",
+        "home_party" : "SEO",
+        "away_party" : "SHO",
+        "result_home" : 4,
+        "result_away" : 0
+    },
+    {
+        "date" : "August 7th",
+        "home_party" : "GLA",
+        "away_party" : "LON",
+        "result_home" : 3,
+        "result_away" : 2
+    },
+    {
+        "date" : "August 8th",
+        "home_party" : "DAL",
+        "away_party" : "HOU",
+        "result_home" : 3,
+        "result_away" : 2
+    },
+    {
+        "date" : "August 8th",
+        "home_party" : "NYE",
+        "away_party" : "BOS",
+        "result_home" : 3,
+        "result_away" : 1
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "SFS",
+        "away_party" : "LON",
+        "result_home" : 0,
+        "result_away" : 4
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "SEO",
+        "away_party" : "HOU",
+        "result_home" : 2,
+        "result_away" : 1
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "SHO",
+        "away_party" : "BOS",
+        "result_home" : 2,
+        "result_away" : 3
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "VAL",
+        "away_party" : "GLA",
+        "result_home" : 3,
+        "result_away" : 1
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "FLA",
+        "away_party" : "DAL",
+        "result_home" : 1,
+        "result_away" : 3
+    },
+    {
+        "date" : "August 9th",
+        "home_party" : "SEO",
+        "away_party" : "NYE",
+        "result_home" : 3,
+        "result_away" : 1
+    }
+  ]
 }

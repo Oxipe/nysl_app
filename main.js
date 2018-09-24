@@ -3,7 +3,7 @@ getData();
 fetchWeather();
 
 function getData() {
-    fetch("https://api.myjson.com/bins/1d1pzw")
+    fetch("https://api.myjson.com/bins/1fw2es")
         .then(response => response.json())
         .then(json => {
             data = json;
@@ -37,6 +37,8 @@ Vue.component("divider", {
 });
 
 function fillApp(data) {
+
+
    var app = new Vue({
         el: "#app",
         created: function () {
@@ -44,12 +46,14 @@ function fillApp(data) {
             this.setPageTitle();
             this.setUpcommingMatch();
             this.month = new Date().getMonth();
+            this.removeLoadingIcon();
         },
         data: {
             data: [],
             upcommingMatch: [],
             full_schedule: [],
             teamDetails: [],
+            arrayGoBack: ["home"],
             months: ["Januari", "Februari", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
             page_title: "",
             news_title: "",
@@ -64,6 +68,7 @@ function fillApp(data) {
             month: 0,
             currentPosition: 0,
             selectedMonth: "",
+            isLoaded: false,
             home_page: true,
             news_page: false,
             full_news: false,
@@ -73,10 +78,18 @@ function fillApp(data) {
             standings_page: false,
             team_details: false,
             chat_page: false,
-            settings_page: false
+            settings_page: false,
+            goingBack: true
         },
         methods: {
-            setPageTitle: function (page) {
+            setPageTitle: function (page, value) {
+
+                if (!this.goingBack) {
+                    this.arrayGoBack.push(page);
+
+                    console.log(this.arrayGoBack)
+                }
+
                 switch (page) {
                     case "home":
                         this.home_page = true;
@@ -116,8 +129,8 @@ function fillApp(data) {
                         this.chat_page = false;
                         this.settings_page = false;
 
-                        this.showSelectedMonth();
-                        this.createFullSchedule();
+                        this.selectedMonth = this.months[this.month];
+                        this.createFullSchedule(this.selectedMonth);
                         break;
                     case "results":
                         this.home_page = false;
@@ -167,6 +180,9 @@ function fillApp(data) {
                         this.chat_page = false;
                         this.settings_page = true;
                         break;
+                    case "detailNews":
+                        this.showNews(value)
+                        break;
                 }
 
                 if (this.home_page) this.page_title = "Home";
@@ -176,6 +192,8 @@ function fillApp(data) {
                 else if (this.standings_page) this.page_title = "Standings";
                 else if (this.chat_page) this.page_title = "Chat";
                 else if (this.settings_page) this.page_title = "Settings";
+
+                this.goingBack = false;
             },
             wrapNews: function (article) {
                 var isDone = false;
@@ -200,14 +218,6 @@ function fillApp(data) {
                 return result = tempArray.join(" ") + "...";
 
             },
-            showSelectedMonth: function () {
-                console.log(this.month)
-
-                this.selectedMonth = this.months[this.month];
-
-                console.log(this.selectedMonth)
-
-            },
             previousMonth: function () {
                 if (this.month > 0) {
                     this.month--;
@@ -222,18 +232,22 @@ function fillApp(data) {
             },
             setUpcommingMatch: function () {
                 this.upcommingMatch = [];
+                var currentDate
 
                 var date = new Date();
-                var currentDate = getMonth(date.getMonth()) + " " + date.getDate();
+                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
 
-                for (var i = 0; i < this.data.schedule.September.length; i++) {
-                    if (currentDate < this.data.schedule.September[i].date) {
-                        this.nextPlayDate = this.data.schedule.September[i].date;
+                console.log(currentDate)
+                console.log(this.data.schedule.september[0].date)
+
+                for (var i = 0; i < this.data.schedule.september.length; i++) {
+                    if (currentDate < this.data.schedule.september[i].date) {
+                        this.nextPlayDate = this.data.schedule.september[i].date;
                         
-                        for (var j = i; j < this.data.schedule.September.length; j++) {
-                            if (this.nextPlayDate === this.data.schedule.September[j].date) {
-                                var homeTeam = this.data.schedule.September[j].home_party;
-                                var awayTeam = this.data.schedule.September[j].away_party;
+                        for (var j = i; j < this.data.schedule.september.length; j++) {
+                            if (this.nextPlayDate === this.data.schedule.september[j].date) {
+                                var homeTeam = this.data.schedule.september[j].home_party;
+                                var awayTeam = this.data.schedule.september[j].away_party;
                                 var homeName;
                                 var awayName;
                                 var homeLogo;
@@ -263,53 +277,103 @@ function fillApp(data) {
                     }
                 }
             },
-            createFullSchedule: function () {
+            createFullSchedule: function (month) {
+                console.log("RE-CREATE THE JSON DATA TO DISPLAY DYNAMIC MONTHS AND SET CONDITION TO CHECK FOR 09/09")
+
                 this.upcommingMatch = [];
 
+                var data;
+
                 var date = new Date();
-                var currentDate = getMonth(date.getMonth()) + " " + date.getDate();
 
-                for (var i = 0; i < this.data.schedule.September.length; i++) {
-                    if ("September 01" < this.data.schedule.September[i].date) {
-                        this.nextPlayDate = this.data.schedule.September[i].date;
-
-                        for (var j = i; j < this.data.schedule.September.length; j++) {
-                            var homeTeam = this.data.schedule.September[j].home_party;
-                            var awayTeam = this.data.schedule.September[j].away_party;
-                            var homeName;
-                            var awayName;
-                            var homeLogo;
-                            var awayLogo;
-
-                            for (var k = 0; k < this.data.team.length; k++) {
-                                if (homeTeam === this.data.team[k].team_code) {
-                                    homeName = this.data.team[k].team_name;
-                                    homeLogo = this.data.team[k].logo;
-                                }
-                            }
-
-                            for (var l = 0; l < this.data.team.length; l++) {
-                                if (awayTeam === this.data.team[l].team_code) {
-                                    awayName = this.data.team[l].team_name;
-                                    awayLogo = this.data.team[l].logo;
-                                }
-                            }
-
-                            var match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam);
-
-                            this.upcommingMatch.push(match);
-                        }
+                switch (month) {
+                    case "Januari": data = this.data.schedule.januari;
                         break;
+                    case "Februari": data = this.data.schedule.februari;
+                        break;
+                    case "March": data = this.data.schedule.march;
+                        break;
+                    case "April": data = this.data.schedule.april;
+                        break;
+                    case "May": data = this.data.schedule.may;
+                        break;
+                    case "June": data = this.data.schedule.june;
+                        break;
+                    case "July": data = this.data.schedule.july;
+                        break;
+                    case "August": data = this.data.schedule.august;
+                        break;
+                    case "September": data = this.data.schedule.september;
+                        break;
+                    case "October": data = this.data.schedule.october;
+                        break;
+                    case "November": data = this.data.schedule.november;
+                        break;
+                    case "December": data = this.data.schedule.december;
+                        break;
+                }
+
+                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
+                console.log(data)
+
+                if (data !== undefined) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (currentDate < data[i].date) {
+                            this.nextPlayDate = data[i].date;
+
+                            for (var j = i; j < data.length; j++) {
+                                var homeTeam = data[j].home_party;
+                                var awayTeam = data[j].away_party;
+                                var homeName;
+                                var awayName;
+                                var homeLogo;
+                                var awayLogo;
+                                var location = data[j].location;
+                                var field = data[j].field;
+                                var time = data[j].game_time;
+                                var referee = data[j].referee;
+
+                                console.log(data)
+                                console.log(location)
+
+                                for (var k = 0; k < this.data.team.length; k++) {
+                                    if (homeTeam === this.data.team[k].team_code) {
+                                        homeName = this.data.team[k].team_name;
+                                        homeLogo = this.data.team[k].logo;
+                                    }
+                                }
+
+                                for (var l = 0; l < this.data.team.length; l++) {
+                                    if (awayTeam === this.data.team[l].team_code) {
+                                        awayName = this.data.team[l].team_name;
+                                        awayLogo = this.data.team[l].logo;
+                                    }
+                                }
+
+                                var match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam, location, field, time, referee);
+
+                                this.upcommingMatch.push(match);
+                            }
+                            break;
+                        }
                     }
                 }
+                
+
+                console.log(this.upcommingMatch)
+
             },
-            CreateMatch: function (homeName, awayName, homeLogo, awayLogo, homeCode, awayCode) {
+            CreateMatch: function (homeName, awayName, homeLogo, awayLogo, homeCode, awayCode, location, field, time, referee) {
                 this.homeName = homeName;
                 this.awayName = awayName;
                 this.homeLogo = homeLogo;
                 this.awayLogo = awayLogo;
                 this.homeCode = homeCode;
                 this.awayCode = awayCode;
+                this.location = location;
+                this.field = field;
+                this.time = time;
+                this.referee = referee;
             },
             showMatchDetails: function (value) {
                 var match = this.upcommingMatch[value];
@@ -367,7 +431,20 @@ function fillApp(data) {
 
                 this.teamDetails = data.team[value];
                 this.currentPosition = value + 1;
+            },
+            goBack: function () {
+                this.goingBack = true;
+                this.arrayGoBack.pop();
 
+                this.setPageTitle(this.arrayGoBack[this.arrayGoBack.length - 1]);
+
+            },
+            removeLoadingIcon: function () {
+                this.isLoaded = true;
+                document.getElementById("loadingWrapper").style.visibility = "hidden";
+                document.getElementById("subHeader").style.visibility = "visible";
+                document.getElementById("content").style.visibility = "visible";
+                //document.getElementById("mainContainer").style.visibility = "visible";
             }
         }
     });
@@ -393,7 +470,7 @@ function displayWeather(data) {
     });
 }
 
-
+/*
 function getMonth(value) {
     switch (value) {
         case 0: return "Januari";
@@ -410,9 +487,12 @@ function getMonth(value) {
         case 11: return "December";
     }
 }
-
+*/
 function toggle() {
-    console.log("toggling")
     $("#toggle").slideToggle();
 }
 
+function removeLoadingIcon() {
+
+
+}
