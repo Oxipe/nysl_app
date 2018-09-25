@@ -53,7 +53,7 @@ function fillApp(data) {
             upcommingMatch: [],
             full_schedule: [],
             teamDetails: [],
-            arrayGoBack: ["home"],
+            arrayGoBack: [{"page": "home"}],
             months: ["Januari", "Februari", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
             page_title: "",
             news_title: "",
@@ -88,7 +88,11 @@ function fillApp(data) {
             setPageTitle: function (page, value) {
 
                 if (!this.goingBack) {
-                    this.arrayGoBack.push(page);
+                    console.log("Page: " + page);
+                    console.log("Value: " + value)
+                    var back = new this.Back(page, value);
+
+                    this.arrayGoBack.push(back);
 
                     console.log(this.arrayGoBack)
                 }
@@ -105,6 +109,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = false;
+                        this.team_details = false;
 
                         this.setUpcommingMatch();
                         break;
@@ -119,6 +124,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = false;
+                        this.team_details = false;
                         break;
                     case "schedule":
                         this.home_page = false;
@@ -131,6 +137,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = false;
+                        this.team_details = false;
 
                         this.selectedMonth = this.months[this.month];
                         this.createFullSchedule(this.selectedMonth);
@@ -146,6 +153,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = false;
+                        this.team_details = false;
                         break;
                     case "standings":
                         this.home_page = false;
@@ -158,6 +166,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = false;
+                        this.team_details = false;
                         break;
                     case "chat":
                         this.home_page = false;
@@ -170,6 +179,7 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = true;
                         this.settings_page = false;
+                        this.team_details = false;
                         break;
                     case "settings":
                         this.home_page = false;
@@ -182,9 +192,52 @@ function fillApp(data) {
                         this.team_details = false;
                         this.chat_page = false;
                         this.settings_page = true;
+                        this.team_details = false;
                         break;
                     case "detailNews":
+                        this.home_page = false;
+                        this.news_page = false;
+                        this.full_news = true;
+                        this.schedule_page = false;
+                        this.detailed_match = false;
+                        this.results_page = false;
+                        this.standings_page = false;
+                        this.team_details = false;
+                        this.chat_page = false;
+                        this.settings_page = false;
+                        this.team_details = false;
+
                         this.showNews(value)
+                        break;
+                    case "detailMatch":
+                        this.home_page = false;
+                        this.news_page = false;
+                        this.full_news = false;
+                        this.schedule_page = false;
+                        this.detailed_match = true;
+                        this.results_page = false;
+                        this.standings_page = false;
+                        this.team_details = false;
+                        this.chat_page = false;
+                        this.settings_page = false;
+                        this.team_details = false;
+
+                        this.showMatchDetails(value);
+                        break;
+                    case "team_details":
+                        this.home_page = false;
+                        this.news_page = false;
+                        this.full_news = false;
+                        this.schedule_page = false;
+                        this.detailed_match = true;
+                        this.results_page = false;
+                        this.standings_page = false;
+                        this.team_details = false;
+                        this.chat_page = false;
+                        this.settings_page = false;
+                        this.team_details = true;
+
+                        this.showTeamDetails(value);
                         break;
                 }
 
@@ -197,6 +250,10 @@ function fillApp(data) {
                 else if (this.settings_page) this.page_title = "Settings";
 
                 this.goingBack = false;
+            },
+            Back: function (page, value) {
+                this.page = page;
+                if (value !== undefined) this.value = value;
             },
             wrapNews: function (article) {
                 var isDone = false;
@@ -351,8 +408,6 @@ function fillApp(data) {
             showMatchDetails: function (value) {
                 var match = this.upcommingMatch[value];
 
-                console.log(match)
-
                 this.home_page = false;
                 this.schedule_page = false;
                 this.detailed_match = true;
@@ -376,10 +431,9 @@ function fillApp(data) {
                 }
             },
             showNews: function (value) {
-                this.home_page = false;
-                this.news_page = false;
-                this.full_news = true;
                 this.page_title = "News";
+
+                console.log(value)
 
                 this.news_title = this.data.news[value].title;
                 this.news_article = this.data.news[value].article;
@@ -418,7 +472,8 @@ function fillApp(data) {
                 this.goingBack = true;
                 this.arrayGoBack.pop();
 
-                this.setPageTitle(this.arrayGoBack[this.arrayGoBack.length - 1]);
+                this.setPageTitle(this.arrayGoBack[this.arrayGoBack.length - 1].page, this.arrayGoBack[this.arrayGoBack.length - 1].value);
+                console.log(this.arrayGoBack)
 
             },
             removeLoadingIcon: function () {
@@ -442,9 +497,6 @@ function fillApp(data) {
                     case "November": return this.data.schedule.november;
                     case "December": return this.data.schedule.december;
                 }
-            },
-            getFullMap: function () {
-                console.log("Full map")
             }
         }
     });

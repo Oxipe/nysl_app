@@ -70,7 +70,7 @@
                 <div class="inner_containter">
                     <div v-on:click="setPageTitle('schedule')" class="next_game_date"><h2>{{nextPlayDate}}</h2></div>
 
-                    <div id="match" class="match" v-for="(match, index) in upcommingMatch" v-on:click="showMatchDetails(index)">
+                    <div id="match" class="match" v-for="(match, index) in upcommingMatch" v-on:click="setPageTitle('detailMatch', index)">
                         <img v-bind:src="match.homeLogo" alt="match.homeName" class="team_logo" />
                         <versus></versus>
                         <img v-bind:src="match.awayLogo" alt="match.awayLogo" class="team_logo" />
@@ -80,18 +80,18 @@
 
                     <div class="news_wrapper">
                         <a href="#" v-on:click="setPageTitle('news')"><h2 class="sub_title">Latest News</h2></a>
-                        <div class="news_title">
+                        <div v-on:click="setPageTitle('detailNews', '0')" class="news_title">
                             <h2>{{data.news[0].title}}</h2>
                         </div>
                         <div class="news_article">
-                            <a v-on:click="showNews('0')"><p v-html="wrapNews(data.news[0].article)"></p></a>
+                            <a v-on:click="setPageTitle('detailNews', '0')"><p v-html="wrapNews(data.news[0].article)"></p></a>
                         </div>
 
-                        <div class="news_title">
+                        <div v-on:click="setPageTitle('detailNews', '1')" class="news_title">
                             <h2>{{data.news[1].title}}</h2>
                         </div>
                         <div class="news_article">
-                            <a v-on:click="showNews('1')"><p v-html="wrapNews(data.news[1].article)"></p></a>
+                            <a v-on:click="setPageTitle('detailNews', '1')"><p v-html="wrapNews(data.news[1].article)"></p></a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                         <h2>{{news.title}}</h2>
                     </div>
                     <div class="news_article">
-                        <a v-on:click="showNews(index)"><p v-html="wrapNews(news.article)"></p></a>
+                        <a v-on:click="setPageTitle('detailNews', index)"><p v-html="wrapNews(news.article)"></p></a>
                     </div>
                     <divider></divider>
                 </div>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                <div v-if="upcommingMatch.length > 0" v-on:click="showMatchDetails(index)" class="small_match" v-for="(match, index) in upcommingMatch">
+                <div v-if="upcommingMatch.length > 0" v-on:click="setPageTitle('detailMatch', index)" class="small_match" v-for="(match, index) in upcommingMatch">
                     <div class="home_team">
                         <div class="team_code">
                             {{match.homeCode}}
@@ -185,9 +185,9 @@
                 <div class="next_game_date">{{nextPlayDate}}</div>
 
                 <div class="match">
-                    <img v-on:click="showTeamDetails(matchHomeCode)" v-bind:src="matchHomeLogo" alt="" class="team_logo" />
+                    <img v-on:click="setPageTitle('team_details', matchHomeCode)" v-bind:src="matchHomeLogo" alt="" class="team_logo" />
                     <versus></versus>
-                    <img v-on:click="showTeamDetails(matchAwayCode)" v-bind:src="matchAwayLogo" alt="" class="team_logo" />
+                    <img v-on:click="setPageTitle('team_details', matchAwayCode)" v-bind:src="matchAwayLogo" alt="" class="team_logo" />
                 </div>
 
                 <div class="match_details">
