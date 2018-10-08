@@ -1,4 +1,3 @@
-
 getData();
 fetchWeather();
 
@@ -7,7 +6,6 @@ function getData() {
         .then(response => response.json())
         .then(json => {
             data = json;
-            console.log(data);
             fillApp(data);
         })
         .catch(function (error) {
@@ -20,7 +18,6 @@ function fetchWeather() {
         .then(response => response.json())
         .then(json => {
             data = json;
-            console.log(data);
             displayWeather(data);
         })
         .catch(function (error) {
@@ -36,18 +33,26 @@ Vue.component("divider", {
     template: "<div class='divider'></div>"
 });
 
+Vue.component("message", {
+    template: "<div class='notification is - info'>" +
+        "<p class= 'name' > ${ posts[key].name }:</p>" +
+        "<p class='post'>${posts[key].body}</p>" +
+        "</div>"
+});
+
 function fillApp(data) {
 
 
    var app = new Vue({
         el: "#app",
-        created: function () {
-            this.data = data;
-            this.setPageTitle();
-            this.setUpcommingMatch();
-            this.month = new Date().getMonth();
-            this.removeLoadingIcon();
-        },
+       created: function () {
+           this.data = data;
+           this.setPageTitle();
+           this.setUpcommingMatch();
+           this.month = new Date().getMonth();
+           this.removeLoadingIcon();
+           firebase.auth().signOut();
+       },
         data: {
             data: [],
             upcommingMatch: [],
@@ -68,10 +73,13 @@ function fillApp(data) {
             matchTime: "",
             matchReferee: "",
             matchMapLocation: "",
+            currentUser: "",
+            posts: {},
             month: 0,
             currentPosition: 0,
             selectedMonth: "",
             isLoaded: false,
+            isLoggedIn: false,
             home_page: true,
             news_page: false,
             full_news: false,
@@ -88,13 +96,9 @@ function fillApp(data) {
             setPageTitle: function (page, value) {
 
                 if (!this.goingBack) {
-                    console.log("Page: " + page);
-                    console.log("Value: " + value)
                     var back = new this.Back(page, value);
 
                     this.arrayGoBack.push(back);
-
-                    console.log(this.arrayGoBack)
                 }
 
                 switch (page) {
@@ -207,7 +211,7 @@ function fillApp(data) {
                         this.settings_page = false;
                         this.team_details = false;
 
-                        this.showNews(value)
+                        this.showNews(value);
                         break;
                     case "detailMatch":
                         this.home_page = false;
@@ -265,9 +269,9 @@ function fillApp(data) {
                 while (!isDone) {
                     for (var i = 0; i < arrayOfWords.length; i++) {
 
-                        if ((count + arrayOfWords[i].length) < 220) {
+                        if (count + arrayOfWords[i].length < 220) {
                             count += arrayOfWords[i].length + 1;
-                            tempArray.push(arrayOfWords[i])
+                            tempArray.push(arrayOfWords[i]);
                         } else {
                             isDone = true;
                             break;
@@ -297,10 +301,9 @@ function fillApp(data) {
                 
 
                 var date = new Date();
-                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
+                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : date.getMonth() + 1 + "/" + date.getDate();
 
                 var data = this.selectDataSet(this.months[date.getMonth()]);
-
                 for (var i = 0; i < data.length; i++) {
                     if (currentDate < data[i].date) {
                         this.nextPlayDate = data[i].date;
@@ -335,8 +338,6 @@ function fillApp(data) {
 
                                 match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam, location, field, time, referee);
 
-                                //this.schedule_page ? match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo, homeTeam, awayTeam) : match = new this.CreateMatch(homeName, awayName, homeLogo, awayLogo);
-
                                 this.upcommingMatch.push(match);
                             }
                         }
@@ -351,7 +352,7 @@ function fillApp(data) {
 
                 var date = new Date();
 
-                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : (date.getMonth() + 1) + "/" + date.getDate();
+                date.getMonth() < 10 ? currentDate = "0" + (date.getMonth() + 1) + "/" + date.getDate() : date.getMonth() + 1 + "/" + date.getDate();
                 
                 if (data !== undefined) {
                     for (var i = 0; i < data.length; i++) {
@@ -433,8 +434,6 @@ function fillApp(data) {
             showNews: function (value) {
                 this.page_title = "News";
 
-                console.log(value)
-
                 this.news_title = this.data.news[value].title;
                 this.news_article = this.data.news[value].article;
             },
@@ -455,8 +454,6 @@ function fillApp(data) {
                 this.standings_page = false;
                 this.team_details = true;
 
-                console.log(this.detailed_match)
-
                 if (isNaN(value)) {
                     for (var i = 0; i < this.data.team.length; i++) {
                         if (value === this.data.team[i].team_code) value = i;
@@ -470,11 +467,9 @@ function fillApp(data) {
             },
             goBack: function () {
                 this.goingBack = true;
-                this.arrayGoBack.pop();
+                if (this.arrayGoBack.length !== 0) this.arrayGoBack.pop();
 
                 this.setPageTitle(this.arrayGoBack[this.arrayGoBack.length - 1].page, this.arrayGoBack[this.arrayGoBack.length - 1].value);
-                console.log(this.arrayGoBack)
-
             },
             removeLoadingIcon: function () {
                 this.isLoaded = true;
@@ -497,6 +492,53 @@ function fillApp(data) {
                     case "November": return this.data.schedule.november;
                     case "December": return this.data.schedule.december;
                 }
+            },
+            login: function () {
+                var provider = new firebase.auth.GoogleAuthProvider();
+
+                
+                    firebase.auth().signInWithPopup(provider)
+                        .then(function () {
+                            app.currentUser = firebase.auth().currentUser.displayName;
+                            console.log(app.currentUser);
+                            app.getPosts();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+
+            },
+            getPosts: function () {
+                firebase.database().ref('chat').on('value', function (data) {
+                    app.posts = data.val();
+
+                });
+                app.isLoggedIn = true;
+                console.log($(".box"))
+            },
+            writeNewPost: function () {
+                if (!$("#textInput").val()) {
+                    return;
+                }
+
+                var text = document.getElementById("textInput").value;
+                var userName = firebase.auth().currentUser.displayName;
+
+                // A post entry.
+                var postData = {
+                    name: userName,
+                    body: text
+                };
+
+                // Get a key for a new Post.
+                var newPostKey = firebase.database().ref().child('chat').push().key;
+
+                var updates = {};
+                updates[newPostKey] = postData;
+
+                $("#textInput").val("");
+
+                return firebase.database().ref().child('chat').update(updates);
             }
         }
     });
@@ -525,4 +567,8 @@ function displayWeather(data) {
 function toggle() {
     $("#toggle").slideToggle();
 }
+
+//Target div might be wrong, scrollTop and scrollHeight = 0
+console.log($(".test"))
+    $(".box").animate({ scrollTop: $(".box").prop("scrollHeight") }, 500);
 

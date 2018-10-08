@@ -2,11 +2,17 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+    <link rel="shortcut icon" sizes="196x196" href="images\icons\shortcut_icon.png">
     <link rel="stylesheet" href="reset.css" type="text/css" />
     <link rel="stylesheet" href="animation.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -43,8 +49,8 @@
             </nav>
 
             <div class="sub_header" id="subHeader">
-                <div v-on:click="goBack()" class="back_icon">
-                    <a v-if="arrayGoBack.length > 1" href="#"><img class="back_icon" src="images\icons\back.png" alt="" /></a>
+                <div v-if="arrayGoBack.length > 1" v-on:click="goBack()" class="back_icon" id="backIcon">
+                    <a  href="#"><img class="back_icon" src="images\icons\back.png" alt="" /></a>
                 </div>
 
                 <div class="page_title">
@@ -58,7 +64,6 @@
 
             </div>
         </div>
-
 
         <div class="main_container content" id="content">
             <!--Landing Page-->
@@ -345,22 +350,59 @@
                 </div>
 
             </div>
+            <!--Chat-->
+            <div v-if="chat_page" class="chat_container" id="chat">
+
+                <div v-if="isLoggedIn" class="chat_container">
+                    <div id="posts" class="box">
+                        <div v-for="post in posts" onchange="animateToBottom" class="test">
+                            <div v-if="post.name === currentUser" class="notification is-info">
+                                <p class="name">{{post.name}}:</p>
+                                <p class="post">{{post.body}}</p>
+                            </div>
+                            <div v-if="post.name !== currentUser" class="notification is-primary">
+                                <p class="name">{{post.name}}:</p>
+                                <p class="post">{{post.body}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input id="textInput" class="input" type="text" placeholder="Your message...">
+                        <button v-on:click="writeNewPost()" id="create-post" class="send_button is-primary">Send</button>
+                    </div>
+                </div>
+
+                <div v-if="!isLoggedIn">
+
+                    <divider></divider>
+
+                    <div class="login">
+                        <h1>Login with Google</h1>
+                    </div>
+
+                    <divider></divider>
+                    <div class="google_button">
+                        <img v-on:click="login()" id="login"  src="images\icons\google.png" alt="" />
+
+                    </div>
+                </div>
+            </div>
+
+            
+
             <!--Settings-->
             <div v-if="settings_page" class="main_container">
 
                 <divider></divider>
 
-                <div class="login toggle">
-                    <h1>Login</h1>
+                <div class="login">
+                    <h1>Login with Google</h1>
                 </div>
 
                 <divider></divider>
+                <div class="google_button">
+                    <img v-on:click="login(), isLoggedIn = true" id="login" src="images\icons\google.png" alt="" />
 
-                <div class="login_box">
-                    <label class="login_label">Username</label>
-                    <input class="login_input" type="text" />
-                    <label class="login_label">Password</label>
-                    <input class="login_input" type="password" />
                 </div>
 
             </div>
@@ -368,8 +410,22 @@
     </div>
 
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyABUBNFFc5N3wbmV0JgAh0b4VnEP2hWeNo",
+            authDomain: "nysl-app-a6b41.firebaseapp.com",
+            databaseURL: "https://nysl-app-a6b41.firebaseio.com",
+            projectId: "nysl-app-a6b41",
+            storageBucket: "nysl-app-a6b41.appspot.com",
+            messagingSenderId: "701562015292"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="main.js"></script>
 </body>

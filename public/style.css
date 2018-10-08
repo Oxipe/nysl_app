@@ -16,8 +16,12 @@ body {
     margin: 5px;
     height: 98%;
     font-size: 35px;
+    text-decoration: none;
 }
 
+a {
+    text-decoration: none;
+}
 
 header {
     flex-basis: 100%;
@@ -26,7 +30,7 @@ header {
 .app {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center
+    justify-content: center;
 }
 
 /*
@@ -74,6 +78,7 @@ h2 {
 .back_icon {
     width: 160px;
     height: 80px;
+    visibility: visible;
 }
 
 .sub_header {
@@ -87,6 +92,10 @@ h2 {
 
 .page_title {
     margin-right: 30px;
+    height: 80px;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*
@@ -99,11 +108,19 @@ h2 {
     visibility: hidden;
 }
 
-.main_container {
+.main_container,
+.chat_container {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+}
+
+.main_container {
     flex-basis: 80%;
+}
+
+.chat_container {
+    flex-basis: 95%;
 }
 
 
@@ -135,6 +152,9 @@ h2 {
 
  .sub_title {
      flex-basis: 100%;
+     font-weight: bolder;
+     color: #777;
+     text-decoration: none;
  }
 
 .next_game_date,
@@ -166,7 +186,7 @@ h2 {
 }
 
 .weather_wrapper {
-    flex-basis: 80%;
+    flex-basis: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -296,6 +316,7 @@ h2 {
 
 .label_content {
     flex-basis: 65%;
+    margin: 5px 0;
 }
 
 .location {
@@ -460,4 +481,109 @@ h2 {
     height: 275px;
     display: flex;
     flex-flow: row wrap;
+}
+
+@media (orientation: landscape) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .icons {
+        width: 75px;
+        height: 75px;
+    }
+
+    .main_container {
+        flex-basis: 90%;
+    }
+
+    .change_month {
+        height: 80px;
+        width: 40px;
+    }
+
+    .small_logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .small_match {
+        height: 100px;
+    }
+
+    .back_icon {
+        width: 140px;
+        height: 60px;
+    }
+
+    .info_button {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/*
+==================================================
+    Chat
+==================================================
+*/
+
+.box {
+    height: 1200px;
+    flex-basis: 100%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #777;
+    border-radius: 10px;
+    bottom: 0;
+}
+
+.inputs {
+    flex-basis: 95%;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+input {
+    flex-basis: 80%;
+    font-size: 25px;
+}
+
+.notification:not(:last-child) {
+    margin-bottom: .3rem;
+}
+
+.notification.is-info {
+    text-align: right;
+    align-self: flex-end;
+}
+
+.notification.is-primary {
+    text-align: left;
+    align-self: flex-start;
+}
+
+.name {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #777;
+} 
+
+.post {
+    margin-bottom: 10px;
+}
+
+.send_button {
+    flex-basis: 15%;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.google_button {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
 }

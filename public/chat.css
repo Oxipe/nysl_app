@@ -1,0 +1,80 @@
+.message {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.myMessage {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(210, 250, 220);
+    border-radius: 10px;
+    opacity: 0.8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+#posts{
+    height: 400px;
+    width: 400px;
+    overflow: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advice{
+    height: 400px;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    opacity: .7;
+    border-radius: 10px;
+}
+
+
+
+.chat{
+    height: 400px;
+}
+
+.inputs{
+    display: flex;
+}
+
+input{
+    margin-right: 15px;
+}
+
+.notification:not(:last-child){
+    margin-bottom: .3rem;
+}
+
+.notification.is-info{
+    text-align: right;
+    max-width: 80%;
+    align-self: flex-end;
+    border-radius: 20px;
+}
+
+.notification.is-primary{
+    text-align: left;
+    max-width: 80%;
+    align-self: flex-start;
+    border-radius: 20px;    
+}
+
+.name{
+    font-size: 12px;
+    font-weight: bold;
+    color: lightyellow;
+}
